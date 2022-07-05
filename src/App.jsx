@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Favourites from './pages/Favourites';
 import NoMatch from "./pages/NoMatch";
 import { ThemeContext } from "./context/ThemeContext";
+import Navbar from "./components/Navbar";
 
 function App() {
 
