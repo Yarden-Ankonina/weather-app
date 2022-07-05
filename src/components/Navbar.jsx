@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom'
 // import {Home,Favourites} from '../pages/Home'
 
 export default function Navbar() {
-    const sunLogo = "https://img.icons8.com/dusk/344/summer.png";
+    // const sunLogo = "https://img.icons8.com/dusk/344/summer.png";
     const moonLogo = "https://img.icons8.com/dusk/344/fog-night.png";
-
   return (
     <>
         <div className='flex bg-cyan-50 p-2 justify-between dark:bg-gray-800 border-solid  border border-cyan-600 dark:border-none bg-transparent '>
