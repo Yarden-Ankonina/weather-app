@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="  App">
       <Routes>
-        <Route index  path="/" element={<Home />} />
+        <Route index  path="/" element={<Home/>} />
         <Route path="favourites" element={<Favourites />} />
         <Route path="*" element={<NoMatch/>} />
       </Routes>
