@@ -1,11 +1,15 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import WeatherBox from '../components/WeatherBox'
 
 export default function Favourites() {
   return (
     <>
-        <Navbar/>
-        <div>Favourites</div>
+       <div className='flex flex-wrap border-t border-solid border-slate-500 items-center h-5/6 justify-center  '>
+        <WeatherBox/>
+        <WeatherBox/>
+        <WeatherBox/>
+        <WeatherBox/>
+      </div>
     </>
   )
 }

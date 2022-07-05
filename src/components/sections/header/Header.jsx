@@ -1,8 +1,8 @@
 import {React} from 'react'
 import { Link } from 'react-router-dom'
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from '../../../context/ThemeContext';
 
-export default function Navbar() {
+export default function Header() {
 
     // function ThemeLogo(){
     //   let logoUrl;
@@ -23,7 +23,6 @@ export default function Navbar() {
     function Logo(){
       const sunLogo = "https://img.icons8.com/dusk/344/summer.png";
       const moonLogo = "https://img.icons8.com/dusk/344/partly-cloudy-night--v1.png";
-      console.log(ThemeContext.Provider );
       return <img alt='logo' className='w-8 h-8 ml-2 ' src={sunLogo} />
     }
 

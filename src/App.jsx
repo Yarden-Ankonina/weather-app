@@ -4,19 +4,23 @@ import { Routes, Route} from "react-router-dom";
 import './App.css';
 import Home from './pages/Home';
 import Favourites from './pages/Favourites';
-import NoMatch from "./pages/NoMatch";
 import { ThemeContext } from "./context/ThemeContext";
-import Navbar from "./components/Navbar";
+import NotFound from "./pages/NotFound";
+import Header from "./components/sections/header";
+import Footer from "./components/sections/footer";
+import Layout from "./components/layout";
 
 function App() {
 
   return (
-    <div className="App h-full ">
-      <ThemeContext.Provider className="" value={"dark"}>
+    <div className="App h-full dark ">
+      <ThemeContext.Provider value={"dark"}>
         <Routes>
-          <Route index  path="/" element={<Home/>} />
-          <Route path="/favourites" element={<Favourites />} />
-          <Route path="/*" element={<NoMatch/>} />
+          <Route path="/" element={<Layout/>}>
+            <Route index  path="/" element={<Home/>} />
+            <Route path="/favourites" element={<Favourites />} />
+            <Route path="/*" element={<NotFound/>} />
+          </Route>
         </Routes>
       </ThemeContext.Provider>
     </div>
