@@ -10,8 +10,8 @@ import { ThemeContext } from "./context/ThemeContext";
 function App() {
 
   return (
-    <div className="  App">
-      <ThemeContext.Provider value={"dark"}>
+    <div className="App h-full ">
+      <ThemeContext.Provider className="" value={"dark"}>
         <Routes>
           <Route index  path="/" element={<Home/>} />
           <Route path="favourites" element={<Favourites />} />
