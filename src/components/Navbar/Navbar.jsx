@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import {Home,Favourites} from '../pages/Home'
 
 export default function Navbar() {
-    // const sunLogo = "https://img.icons8.com/dusk/344/summer.png";
+    const sunLogo = "https://img.icons8.com/dusk/344/summer.png";
     const moonLogo = "https://img.icons8.com/dusk/344/fog-night.png";
   return (
     <>
