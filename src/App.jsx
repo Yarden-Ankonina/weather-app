@@ -15,8 +15,8 @@ function App() {
       <ThemeContext.Provider className="" value={"dark"}>
         <Routes>
           <Route index  path="/" element={<Home/>} />
-          <Route path="favourites" element={<Favourites />} />
-          <Route path="*" element={<NoMatch/>} />
+          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/*" element={<NoMatch/>} />
         </Routes>
       </ThemeContext.Provider>
     </div>
