@@ -4,37 +4,40 @@ import { ThemeContext } from '../../../context/ThemeContext';
 
 export default function Header() {
 
-    // function ThemeLogo(){
-    //   let logoUrl;
-    //   const sunLogo = "https://img.icons8.com/dusk/344/summer.png";
-    //   const moonLogo = "https://img.icons8.com/dusk/344/partly-cloudy-night--v1.png";
-      
-      
-    //   console.log(ThemeContext.displayName);
-    //   if(ThemeContext === "light"){
-    //     logoUrl = sunLogo;        
-    //   }
-    //   else{
-    //     logoUrl = moonLogo;
-    //   }
-    //   return logoUrl;
-    // }
-
-    function Logo(){
+  function HeaderLogo(){
       const sunLogo = "https://img.icons8.com/dusk/344/summer.png";
       const moonLogo = "https://img.icons8.com/dusk/344/partly-cloudy-night--v1.png";
-      return <img alt='logo' className='w-8 h-8 ml-2 ' src={sunLogo} />
+      const theme = "dark";
+      let logoRes;
+      if(theme === "dark"){
+        logoRes = moonLogo;
+      }
+      else{
+        logoRes = sunLogo;
+      }
+      return <img alt='logo' className='w-8 h-8 ml-2 ' src={logoRes} />
     }
 
-    const sunLogo = "https://img.icons8.com/dusk/344/summer.png";
+    function ThemeMessege(){
+      const theme = "dark";
+      let msg;
+      if(theme === "dark"){
+        msg = "dark";
+      }
+      else{
+        msg = "light";
+      }
+      return msg
+    }
 
   return (
     <>
-        <div className='flex bg-cyan-50 p-2 justify-between dark:bg-gray-800 border-solid  border border-cyan-600 dark:border-none bg-transparent '>
-            <h1 className='text-2xl	font-bold m-0.5 ml-2 text-cyan-800 flex dark:text-slate-300 '>Weather App <Logo/></h1>
+        <div className='flex bg-transparent p-2 justify-between  dark:bg-black border-solid  border border-zinc-600 dark:border-none '>
+            <h1 className='text-2xl	font-bold m-0.5 ml-2 text-zinc-800 flex dark:text-slate-300 '>Weather App <HeaderLogo/></h1>
             <span className=' mr-1'>
-                <button className='m-0.5 p-1 rounded border-solid border border-cyan-600 bg-cyan-100 dark:bg-slate-300  dark:border-none'><Link to='/'>Home</Link></button>
-                <button className='m-0.5 p-1 rounded border-solid border border-cyan-600 bg-cyan-100 dark:bg-slate-300 dark:border-none'><Link to='/favourites'>Favourites</Link></button>
+                <button className='m-0.5 p-1 mr-2 border-solid border rounded border-zinc-600 dark:text-zinc-300'><ThemeMessege/></button>
+                <button className='m-0.5 p-1 rounded border-solid border border-zinc-600 bg-zinc-200 dark:bg-zinc-300  dark:border-none'><Link to='/'>Home</Link></button>
+                <button className='m-0.5 p-1 rounded border-solid border border-zinc-600 bg-zinc-200 dark:bg-zinc-300 dark:border-none'><Link to='/favourites'>Favourites</Link></button>
             </span>
         </div>
     </>

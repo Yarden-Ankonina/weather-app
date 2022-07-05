@@ -7,8 +7,7 @@ export default function Layout() {
   return (
     <>
       <Header/>
-       <div className=' justify-center bg-slate-50 dark:bg-slate-600 h-5/6'>
-            
+        <div className=' justify-center bg-zinc-100 dark:bg-slate-700 h-full dark:bg-gradient-to-r from-slate-800 to-stone-900 '>
             <Outlet/>
         </div>
       <Footer/>

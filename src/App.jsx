@@ -13,7 +13,7 @@ import Layout from "./components/layout";
 function App() {
 
   return (
-    <div className="App h-full dark ">
+    <div className="App h-full dark">
       <ThemeContext.Provider value={"dark"}>
         <Routes>
           <Route path="/" element={<Layout/>}>
