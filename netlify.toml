@@ -1,6 +1,13 @@
 [build]
     publish = "build/"
+
+# To make Netlify return 200 on other routes than root, since this is a client-side app
 [[redirects]]
     from = "/*"
     to = "/index.html"
+    status = 200
+
+[[redirects]]
+    from = "/home"
+    to = "/*"
     status = 200
