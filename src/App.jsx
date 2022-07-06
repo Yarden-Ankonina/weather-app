@@ -2,7 +2,7 @@ import * as React from "react";
 import { Routes, Route} from "react-router-dom";
 
 import './App.css';
-import Home from './pages/home';
+import Home from './pages/home.jsx';
 import Favourites from './pages/favourites';
 import NotFound from "./pages/notFound";
 import Layout from "./components/layout";
