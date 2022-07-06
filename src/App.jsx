@@ -6,10 +6,9 @@ import Home from './pages/home';
 import Favourites from './pages/favourites';
 import NotFound from "./pages/notFound";
 import Layout from "./components/layout";
-import { ThemeProvider, UseTheme } from "./utils/themeProvider";
+import { ThemeProvider } from "./utils/themeProvider";
 
 function App() {
-  const theme = UseTheme();
   return (
     <ThemeProvider>
           <Routes>
