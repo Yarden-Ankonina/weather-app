@@ -3,9 +3,9 @@ import { Routes, Route} from "react-router-dom";
 
 import './App.css';
 import Layout from "./components/layout";
-import Favourites from "./pages/favourite";
-import Home from "./pages/home";
-import NotFound from "./pages/notFound";
+import Favourites from "./page/favourites";
+import Home from "./page/home";
+import NotFound from "./page/notFound";
 import { ThemeProvider } from "./utils/themeProvider";
 
 function App() {
