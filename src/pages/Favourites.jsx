@@ -1,5 +1,5 @@
 import React from 'react'
-import WeatherBox from '../components/WeatherBox'
+import WeatherBox from '../components/weatherBox'
 
 export default function Favourites() {
   return (
