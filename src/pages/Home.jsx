@@ -1,7 +1,7 @@
 import React from 'react'
 import WeatherBox from '../components/weatherBox'
 
-export default function Home() {
+export default function Homes() {
   
   return (
     <>
