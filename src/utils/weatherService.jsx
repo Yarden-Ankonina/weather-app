@@ -1,12 +1,13 @@
+import { data } from "autoprefixer";
 import { useQuery } from "react-query";
 
 const API_KEY = "N3XKvtPaWl6ZYCmmeoCXR6PutQk8xBzH";
 const API = "http://dataservice.accuweather.com";
-const TEL_AVIV_COORDS = {
-    locationKey : 215835,
-    lat :32.1062555,
-    long : 2034.7975642
-}
+// const TEL_AVIV_COORDS = {
+//     locationKey : 215835,
+//     lat :32.1062555,
+//     long : 2034.7975642
+// }
 
 function getUserLocation(){
     return new Promise((resolve, reject)=>{
@@ -17,12 +18,24 @@ function getUserLocation(){
     })
 }
 
-
+export function GetPCheck(){
+    const city = {
+        locationKey : geoPositionSearch.Key,
+        cityName: geoPositionSearch.AdministrativeArea.EnglishName,
+        country : geoPositionSearch.Country,
+    }
+    const cityForecast = {
+        name : city.cityName,
+        country : city.country.EnglishName,
+        forecast : currentWeather[0],
+    }
+    return cityForecast;
+}
 
 export async function getUserCity(){
     const fetchGeoPositionSearch = async (lat,long)=>{
-        const API_END_POINT = "/locations/v1/cities/geoposition/search";
-        const response = await fetch(`${API}${API_END_POINT}?apikey=${API_KEY}&q=${lat}%2C%${long}`);
+        const apiEndPoint = "/locations/v1/cities/geoposition/search";
+        const response = await fetch(`${API}${apiEndPoint}?apikey=${API_KEY}&q=${lat}%2C%${long}`);
         return response.json();
     }
 
@@ -30,12 +43,14 @@ export async function getUserCity(){
         const pos = await getUserLocation()
         const lat = pos.coords.latitude;
         const long = pos.coords.longitude;
-        console.log("lat : " + lat, "long : " + long)
         // const{data, status} = useQuery('locationInfo', fetchGeoPositionSearch(lat,long))
-        console.log(geoPositionSearch);
 
-        return geoPositionSearch.Key;
-
+        const city = {
+            locationKey : geoPositionSearch.Key,
+            cityName: geoPositionSearch.AdministrativeArea.EnglishName,
+            country : geoPositionSearch.Country,
+        }
+        return city;
     }
     catch(error){
         console.log("can't load location" + error)
@@ -45,11 +60,24 @@ export async function getUserCity(){
 
 export async function getCurrentWeather(){
     const fetchCurrentWeather = async ()=>{
-        const API_END_POINT = "currentconditions/v1/";
-        const locationKey = await getUserCity();
-        // const response = await fetch(`${API}${API_END_POINT}${locationKey}?apikey=${API_KEY}`)
+        const apiEndPoint = "currentconditions/v1/";
+        const userCity = await getUserCity();
+        cityForecast.name = userCity.cityName;
+        cityForecast.country = userCity.country;
+        // const response = await fetch(`${API}${apiEndPoint}${city.locationKey}?apikey=${API_KEY}`)
     }
-// const{data, status} = useQuery('currentWeather' fetchCurrentWeather)
+    // const{data, status} = useQuery('currentWeather' fetchCurrentWeather)
+    const forcast = currentWeather[0];
+    if(forcast.IsDayTime){
+        
+    }
+    const cityForecast = {
+        name : "",
+        country : "",
+        forecast : currentWeather[0],
+    }
+    return cityForecast;
+
 }
 
 
@@ -116,7 +144,7 @@ const geoPositionSearch = {
     ],
   };
   
-  const currentWeather = [
+  export const currentWeather = [
     {
       "LocalObservationDateTime": "2022-07-07T02:47:00+03:00",
       "EpochTime": 1657151220,

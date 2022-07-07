@@ -1,29 +1,30 @@
-import React, { createContext, useContext, useState } from 'react'
+// import React, { createContext, useContext, useState } from 'react'
 
-export const UserContext = createContext();
-export const UserContextUpdate = createContext();
+// export const UserContext = createContext();
+// export const UserContextUpdate = createContext();
 
-export function useIsUserDayTime(){
-    return useContext(UserContext);
-}
+// export function useIsUserDayTime(){
+//     return useContext(UserContext);
+// }
 
-export function useIsUserDayTimeUpdate(){
-    return useContext(UserContextUpdate);
-}
+// export function useIsUserDayTimeUpdate(){
+//     return useContext(UserContextUpdate);
+// }
 
-export function UserProvider({children}) {
-    const [isDayTime, setIsDayTime] = useState(true);
+// export function UserProvider({children}) {
+//     const [isDayTime, setIsDayTime] = useState(true);
 
-    function updateDayTime(time){
-        setIsDayTime(isDayTime = time);
-    }
+//     function updateDayTime(time){
+//         console.log(time)
+//         setIsDayTime(time);
+//     }
 
-  return (
-    <UserContext.Provider value={isDayTime}>
-        <UserContextUpdate.Provider value={updateDayTime}>
-            {children}
-        </UserContextUpdate.Provider>
-    </UserContext.Provider>
+//   return (
+//     <UserContext.Provider value={isDayTime}>
+//         <UserContextUpdate.Provider value={updateDayTime}>
+//             {children}
+//         </UserContextUpdate.Provider>
+//     </UserContext.Provider>
 
-  )
-}
+//   )
+// }
