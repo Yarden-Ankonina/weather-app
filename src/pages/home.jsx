@@ -1,8 +1,11 @@
 import React from 'react'
+
 import WeatherBox from '../components/weatherBox'
+import { getUserCity } from '../utils/weatherService'
 
 export default function Home() {
-  
+  getUserCity()
+
   return (
     <>
       <div className=' flex flex-col  justify-center border-t border-solid border-slate-500 dark:border-none items-center h-5/6   '>

@@ -3,11 +3,11 @@ import React, { createContext, useContext, useState } from "react";
 export const ThemeContext = createContext();
 export const ThemeUpdateContext = createContext();
 
-export function UseTheme(){
+export function useTheme(){
     return useContext(ThemeContext);
 }
 
-export function UseThemeUpdate(){
+export function useThemeUpdate(){
     return useContext(ThemeUpdateContext);
 }
 
