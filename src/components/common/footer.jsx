@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { useTheme } from '../../utils/themeProvider';
+import { useTheme } from '../../hooks/useTheme';
+
 
 export default function Footer() {
 
   const darkGitLogo = "https://img.icons8.com/nolan/344/github.png";
   const lightGitLogo = "https://img.icons8.com/glyph-neue/344/github.png";
 
-  const theme = useTheme();
-  const isDarkMode = theme === "dark";
+  const {isDarkMode} = useTheme();
 
   return (
     <>

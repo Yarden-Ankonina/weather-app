@@ -1,0 +1,274 @@
+{
+  "geo-position":{
+     "Version":1,
+     "Key":"215835",
+     "Type":"City",
+     "Rank":45,
+     "LocalizedName":"Ramat Aviv",
+     "EnglishName":"Ramat Aviv",
+     "PrimaryPostalCode":"",
+     "Region":{
+        "ID":"MEA",
+        "LocalizedName":"Middle East",
+        "EnglishName":"Middle East"
+     },
+     "Country":{
+        "ID":"IL",
+        "LocalizedName":"Israel",
+        "EnglishName":"Israel"
+     },
+     "AdministrativeArea":{
+        "ID":"TA",
+        "LocalizedName":"Tel Aviv",
+        "EnglishName":"Tel Aviv",
+        "Level":1,
+        "LocalizedType":"District",
+        "EnglishType":"District",
+        "CountryID":"IL"
+     },
+     "TimeZone":{
+        "Code":"IDT",
+        "Name":"Asia/Jerusalem",
+        "GmtOffset":3,
+        "IsDaylightSaving":true,
+        "NextOffsetChange":"2022-10-29T23:00:00Z"
+     },
+     "GeoPosition":{
+        "Latitude":32.108,
+        "Longitude":34.797,
+        "Elevation":{
+           "Metric":{
+              "Value":13,
+              "Unit":"m",
+              "UnitType":5
+           },
+           "Imperial":{
+              "Value":42,
+              "Unit":"ft",
+              "UnitType":0
+           }
+        }
+     },
+     "IsAlias":false,
+     "SupplementalAdminAreas":[
+        
+     ],
+     "DataSets":[
+        "AirQualityCurrentConditions",
+        "AirQualityForecasts",
+        "Alerts",
+        "DailyPollenForecast",
+        "ForecastConfidence",
+        "FutureRadar",
+        "MinuteCast"
+     ]
+  },
+  "5-daily-forecasts":{
+     "Headline":{
+        "EffectiveDate":"2022-07-09T08:00:00+03:00",
+        "EffectiveEpochDate":1657342800,
+        "Severity":4,
+        "Text":"Pleasant this weekend",
+        "Category":"mild",
+        "EndDate":null,
+        "EndEpochDate":null,
+        "MobileLink":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?lang=en-us",
+        "Link":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?lang=en-us"
+     },
+     "DailyForecasts":[
+        {
+           "Date":"2022-07-08T07:00:00+03:00",
+           "EpochDate":1657252800,
+           "Temperature":{
+              "Minimum":{
+                 "Value":72,
+                 "Unit":"F",
+                 "UnitType":18
+              },
+              "Maximum":{
+                 "Value":88,
+                 "Unit":"F",
+                 "UnitType":18
+              }
+           },
+           "Day":{
+              "Icon":1,
+              "IconPhrase":"Sunny",
+              "HasPrecipitation":false
+           },
+           "Night":{
+              "Icon":34,
+              "IconPhrase":"Mostly clear",
+              "HasPrecipitation":false
+           },
+           "Sources":[
+              "AccuWeather"
+           ],
+           "MobileLink":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=1&lang=en-us",
+           "Link":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=1&lang=en-us"
+        },
+        {
+           "Date":"2022-07-09T07:00:00+03:00",
+           "EpochDate":1657339200,
+           "Temperature":{
+              "Minimum":{
+                 "Value":73,
+                 "Unit":"F",
+                 "UnitType":18
+              },
+              "Maximum":{
+                 "Value":88,
+                 "Unit":"F",
+                 "UnitType":18
+              }
+           },
+           "Day":{
+              "Icon":2,
+              "IconPhrase":"Mostly sunny",
+              "HasPrecipitation":false
+           },
+           "Night":{
+              "Icon":34,
+              "IconPhrase":"Mostly clear",
+              "HasPrecipitation":false
+           },
+           "Sources":[
+              "AccuWeather"
+           ],
+           "MobileLink":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=2&lang=en-us",
+           "Link":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=2&lang=en-us"
+        },
+        {
+           "Date":"2022-07-10T07:00:00+03:00",
+           "EpochDate":1657425600,
+           "Temperature":{
+              "Minimum":{
+                 "Value":73,
+                 "Unit":"F",
+                 "UnitType":18
+              },
+              "Maximum":{
+                 "Value":88,
+                 "Unit":"F",
+                 "UnitType":18
+              }
+           },
+           "Day":{
+              "Icon":1,
+              "IconPhrase":"Sunny",
+              "HasPrecipitation":false
+           },
+           "Night":{
+              "Icon":34,
+              "IconPhrase":"Mostly clear",
+              "HasPrecipitation":false
+           },
+           "Sources":[
+              "AccuWeather"
+           ],
+           "MobileLink":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=3&lang=en-us",
+           "Link":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=3&lang=en-us"
+        },
+        {
+           "Date":"2022-07-11T07:00:00+03:00",
+           "EpochDate":1657512000,
+           "Temperature":{
+              "Minimum":{
+                 "Value":72,
+                 "Unit":"F",
+                 "UnitType":18
+              },
+              "Maximum":{
+                 "Value":87,
+                 "Unit":"F",
+                 "UnitType":18
+              }
+           },
+           "Day":{
+              "Icon":1,
+              "IconPhrase":"Sunny",
+              "HasPrecipitation":false
+           },
+           "Night":{
+              "Icon":34,
+              "IconPhrase":"Mostly clear",
+              "HasPrecipitation":false
+           },
+           "Sources":[
+              "AccuWeather"
+           ],
+           "MobileLink":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=4&lang=en-us",
+           "Link":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=4&lang=en-us"
+        },
+        {
+           "Date":"2022-07-12T07:00:00+03:00",
+           "EpochDate":1657598400,
+           "Temperature":{
+              "Minimum":{
+                 "Value":74,
+                 "Unit":"F",
+                 "UnitType":18
+              },
+              "Maximum":{
+                 "Value":89,
+                 "Unit":"F",
+                 "UnitType":18
+              }
+           },
+           "Day":{
+              "Icon":1,
+              "IconPhrase":"Sunny",
+              "HasPrecipitation":false
+           },
+           "Night":{
+              "Icon":35,
+              "IconPhrase":"Partly cloudy",
+              "HasPrecipitation":false
+           },
+           "Sources":[
+              "AccuWeather"
+           ],
+           "MobileLink":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=5&lang=en-us",
+           "Link":"http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=5&lang=en-us"
+        }
+     ]
+  },
+  "current-weather":{
+     "LocalObservationDateTime":"2022-07-07T02:47:00+03:00",
+     "EpochTime":1657151220,
+     "WeatherText":"Mostly clear",
+     "WeatherIcon":34,
+     "HasPrecipitation":false,
+     "PrecipitationType":null,
+     "IsDayTime":false,
+     "Temperature":{
+        "Metric":{
+           "Value":24,
+           "Unit":"C",
+           "UnitType":17
+        },
+        "Imperial":{
+           "Value":75,
+           "Unit":"F",
+           "UnitType":18
+        }
+     },
+     "MobileLink":"http://www.accuweather.com/en/il/ramat-aviv/215835/current-weather/215835?lang=en-us",
+     "Link":"http://www.accuweather.com/en/il/ramat-aviv/215835/current-weather/215835?lang=en-us"
+  },
+  "autocomplete-search" : {
+      "Version": 1,
+      "Key": "215854",
+      "Type": "City",
+      "Rank": 31,
+      "LocalizedName": "Tel Aviv",
+      "Country": {
+        "ID": "IL",
+        "LocalizedName": "Israel"
+      },
+      "AdministrativeArea": {
+        "ID": "TA",
+        "LocalizedName": "Tel Aviv"
+      }
+    }
+}

@@ -6,11 +6,18 @@ import Layout from "./components/layout";
 import Favourites from "./pages/favourites";
 import Home from "./pages/home";
 import NotFound from "./pages/notFound";
-import { ThemeProvider } from "./utils/themeProvider";
 import { QueryClientProvider ,QueryClient } from "react-query";
+import { ThemeProvider } from "./contexts/themeContext";
+import { fetchAutoCompleteSearch, fetchCurrentWeather, fetchDailyForecastsMock, fetchGeoPosition} from "./utils/mockServerJsonService";
+
+const queryClient = new QueryClient();
 
 function App() {
-  const queryClient = new QueryClient();
+ 
+  fetchAutoCompleteSearch()
+  fetchCurrentWeather()
+  fetchDailyForecastsMock()
+  fetchGeoPosition()
 
   return (
     <QueryClientProvider client={queryClient}>

@@ -9,6 +9,7 @@ const API = "http://dataservice.accuweather.com";
 //     long : 2034.7975642
 // }
 
+
 function getUserLocation(){
     return new Promise((resolve, reject)=>{
         navigator.geolocation.getCurrentPosition(

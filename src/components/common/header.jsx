@@ -1,7 +1,8 @@
 import {React} from 'react'
 import { Link } from 'react-router-dom'
 
-import { useTheme, useThemeUpdate } from '../../utils/themeProvider';
+import { useTheme } from '../../hooks/useTheme';
+
 
 
 
@@ -9,9 +10,8 @@ export default function Header() {
 
   const sunLogo = "https://img.icons8.com/dusk/344/summer.png";
   const moonLogo = "https://img.icons8.com/dusk/344/partly-cloudy-night--v1.png";
-  const theme = useTheme();
-  const toggleTheme = useThemeUpdate();
-  const isDarkMode = theme === "dark";
+
+  const {toggleTheme, isDarkMode} = useTheme();
   
   return (
     <>
