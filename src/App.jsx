@@ -14,10 +14,10 @@ const queryClient = new QueryClient();
 
 function App() {
  
-  fetchAutoCompleteSearch()
-  fetchCurrentWeather()
-  fetchDailyForecastsMock()
-  fetchGeoPosition()
+  // fetchAutoCompleteSearch()
+  // fetchCurrentWeather()
+  // fetchDailyForecastsMock()
+  // fetchGeoPosition()
 
   return (
     <QueryClientProvider client={queryClient}>
