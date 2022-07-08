@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <>
         <div className='flex bg-transparent p-2 justify-between items-center flex-col sm:flex-row dark:bg-black border-solid  border-b border-zinc-100 dark:border-zinc-900 '>
-            <h1 className='text-2xl	font-bold m-0.5 ml-2 text-zinc-800 flex dark:text-slate-300 '>Weather App 
+            <h1 className='text-2xl mb-3 sm:m-0	font-bold m-0.5 ml-2 text-zinc-800 flex dark:text-slate-300 '>Weather App 
               {isDarkMode()
                 ? <img alt='logo' className='w-8 h-8 ml-2 ' src={moonLogo}/>
                 : <img alt='logo' className='w-8 h-8 ml-2 ' src={sunLogo} />
