@@ -2,13 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-html,body,#root{
+html,body{
   height: 100%;
+  overflow:scroll;
 }
 
 body::-webkit-scrollbar{
   display: none;
 }
+
+#root{
+  height: max-content;
+  height:100%;
+}
+
 
 body {
   margin: 0;
