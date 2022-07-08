@@ -6,7 +6,6 @@ export default function FiveDayForecast() {
 
     const weeklyForecast = getFiveDayForecast();
     const forecast = weeklyForecast.DailyForecasts;
-    console.log(new Date(forecast[0].Date));
   return (
     <>
         <div className=' flex w-full flex-row mt-2 flex-wrap justify-center items-center'>
