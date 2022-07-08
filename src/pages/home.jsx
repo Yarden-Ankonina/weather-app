@@ -1,7 +1,7 @@
 import React from 'react'
 
-import CityForecastExpanded from '../components/cityForecastExpanded';
-
+import CityForecast from '../components/cityForecast';
+import { useGeoPosition } from '../utils/mockServerJsonService';
 
 export default function Home() {
   
@@ -11,7 +11,8 @@ export default function Home() {
     const innerHTML = e.target.innerHTML;
     (innerHTML.codePointAt(0) === fullHeart)? e.target.innerHTML = `&#${emptyHeart};` : e.target.innerHTML =`&#${fullHeart};`;
   }
- 
+  
+  useGeoPosition();
   return (
     <>
       {/* <img className='w-full absolute t-0' src={"https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"}/> */}
@@ -22,7 +23,7 @@ export default function Home() {
         <button className='text-6xl mb-2 font-light text-red-500' onClick={toggleHeart}>&#9825;</button>
         {/* style={{backgroundImage : "url(https://images.unsplash.com/photo-1438179152657-8ce7dfda4f0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)",backgroundSize:"cover"}} */}
         <div className='flex w-full justify-center items-start'>
-          <CityForecastExpanded/>
+          <CityForecast/>
         </div>
       </div>
     </>

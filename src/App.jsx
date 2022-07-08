@@ -8,7 +8,6 @@ import Home from "./pages/home";
 import NotFound from "./pages/notFound";
 import { QueryClientProvider ,QueryClient } from "react-query";
 import { ThemeProvider } from "./contexts/themeContext";
-import { fetchAutoCompleteSearch, fetchCurrentWeather, fetchDailyForecastsMock, fetchGeoPosition} from "./utils/mockServerJsonService";
 
 const queryClient = new QueryClient();
 

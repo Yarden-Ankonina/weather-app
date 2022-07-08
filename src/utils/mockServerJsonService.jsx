@@ -1,3 +1,4 @@
+import {useQuery, useQueryClient} from 'react-query'
 
 const API_ENUM = {
     FiveDailyForcast : "5-daily-forecasts",
@@ -19,11 +20,11 @@ export const fetchCurrentWeather = async ()=>{
     console.log(data);
 }
 
-export const fetchGeoPosition = async ()=>{
-    const res = await fetch(API+API_ENUM.GeoPosition)
-    const data = await res.json();
-    console.log(data);
-}
+// export const fetchGeoPosition = async ()=>{
+//     const res = await fetch(API+API_ENUM.GeoPosition)
+//     const data = await res.json();
+//     console.log(data);
+// }
 
 export const fetchAutoCompleteSearch = async ()=>{
     const res = await fetch(API+API_ENUM.AutoComplete)
@@ -31,5 +32,22 @@ export const fetchAutoCompleteSearch = async ()=>{
     console.log(data);
 }
 
+export const useGeoPosition = ()=>{    
+     const fetchGeoPosition = async ()=>{
+        const res = await fetch(API+API_ENUM.GeoPosition)
+        return res.json()
+    }
+    const {data, status} = useQuery('position', fetchGeoPosition);
+
+    // return(
+    //     <div>
+    //         {data.res.map((position)=>(
+    //             <div>{position.}</div>
+    //         ))
+    //         }
+    //     </div>
+
+    // )
+}
 // json-server --watch db.json --port 3001
 
