@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CityForecast from '../components/cityForecast';
+import CityForecastContainer from '../components/cityForecastContainer';
 import { useGeoPosition } from '../utils/mockServerJsonService';
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
         <button className='text-6xl mb-2 font-light text-red-500' onClick={toggleHeart}>&#9825;</button>
         {/* style={{backgroundImage : "url(https://images.unsplash.com/photo-1438179152657-8ce7dfda4f0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)",backgroundSize:"cover"}} */}
         <div className='flex w-full justify-center items-start'>
-          <CityForecast/>
+          <CityForecastContainer/>
         </div>
       </div>
     </>
