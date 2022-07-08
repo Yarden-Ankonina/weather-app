@@ -1,13 +1,15 @@
 import React from 'react'
 
-import WeatherBox from '../components/weatherBox'
 import { useTheme } from '../utils/themeProvider';
 import { GetPCheck} from '../utils/weatherService'
+import FiveDayForecast from '../components/fiveDayForecast';
+
 
 export default function Home() {
   
   const theme = useTheme();
   const isDarkMode = theme === "dark";
+
 
   const cityForcast = GetPCheck()
   return (
@@ -35,11 +37,8 @@ export default function Home() {
             </div>
           </div>
           <div className=' flex flex-row p-2 flex-wrap justify-center items-center'>
-            <WeatherBox/>
-            <WeatherBox/>
-            <WeatherBox/>
-            <WeatherBox/>
-            <WeatherBox/>
+            <FiveDayForecast/>
+            
           </div>
         </div>
       </div>

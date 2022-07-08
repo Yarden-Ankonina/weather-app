@@ -58,7 +58,7 @@ export async function getUserCity(){
     }
 }
 
-export async function getCurrentWeather(){
+export function getCurrentWeather(){
     const fetchCurrentWeather = async ()=>{
         const apiEndPoint = "currentconditions/v1/";
         const userCity = await getUserCity();
@@ -80,6 +80,17 @@ export async function getCurrentWeather(){
 
 }
 
+export default function getFiveDayForecast(){
+  const fetchFiveforecast = async ()=> {
+    const apiEndPoint = "/daily/5day/";
+    const city = await getUserCity();
+    const response = await fetch((`${API}${apiEndPoint}${city.locationKey}?apikey=${API_KEY}`))
+    return response.json();
+  }
+  // const {data,status} = useQuery("fiveDayForecast", fetchFiveforecast)
+
+  return fiveDaysWeather;
+}
 
 const geoPositionSearch = {
     Version: 1,
@@ -169,3 +180,174 @@ const geoPositionSearch = {
       "Link": "http://www.accuweather.com/en/il/ramat-aviv/215835/current-weather/215835?lang=en-us"
     }
   ]
+
+export const fiveDaysWeather = {
+      "Headline": {
+      "EffectiveDate": "2022-07-09T08:00:00+03:00",
+      "EffectiveEpochDate": 1657342800,
+      "Severity": 4,
+      "Text": "Pleasant this weekend",
+      "Category": "mild",
+      "EndDate": null,
+      "EndEpochDate": null,
+      "MobileLink": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?lang=en-us",
+      "Link": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?lang=en-us"
+    },
+    "DailyForecasts": [
+      {
+        "Date": "2022-07-08T07:00:00+03:00",
+        "EpochDate": 1657252800,
+        "Temperature": {
+          "Minimum": {
+            "Value": 72,
+            "Unit": "F",
+            "UnitType": 18
+          },
+          "Maximum": {
+            "Value": 88,
+            "Unit": "F",
+            "UnitType": 18
+          }
+        },
+        "Day": {
+          "Icon": 1,
+          "IconPhrase": "Sunny",
+          "HasPrecipitation": false
+        },
+        "Night": {
+          "Icon": 34,
+          "IconPhrase": "Mostly clear",
+          "HasPrecipitation": false
+        },
+        "Sources": [
+          "AccuWeather"
+        ],
+        "MobileLink": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=1&lang=en-us",
+        "Link": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=1&lang=en-us"
+      },
+      {
+        "Date": "2022-07-09T07:00:00+03:00",
+        "EpochDate": 1657339200,
+        "Temperature": {
+          "Minimum": {
+            "Value": 73,
+            "Unit": "F",
+            "UnitType": 18
+          },
+          "Maximum": {
+            "Value": 88,
+            "Unit": "F",
+            "UnitType": 18
+          }
+        },
+        "Day": {
+          "Icon": 2,
+          "IconPhrase": "Mostly sunny",
+          "HasPrecipitation": false
+        },
+        "Night": {
+          "Icon": 34,
+          "IconPhrase": "Mostly clear",
+          "HasPrecipitation": false
+        },
+        "Sources": [
+          "AccuWeather"
+        ],
+        "MobileLink": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=2&lang=en-us",
+        "Link": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=2&lang=en-us"
+      },
+      {
+        "Date": "2022-07-10T07:00:00+03:00",
+        "EpochDate": 1657425600,
+        "Temperature": {
+          "Minimum": {
+            "Value": 73,
+            "Unit": "F",
+            "UnitType": 18
+          },
+          "Maximum": {
+            "Value": 88,
+            "Unit": "F",
+            "UnitType": 18
+          }
+        },
+        "Day": {
+          "Icon": 1,
+          "IconPhrase": "Sunny",
+          "HasPrecipitation": false
+        },
+        "Night": {
+          "Icon": 34,
+          "IconPhrase": "Mostly clear",
+          "HasPrecipitation": false
+        },
+        "Sources": [
+          "AccuWeather"
+        ],
+        "MobileLink": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=3&lang=en-us",
+        "Link": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=3&lang=en-us"
+      },
+      {
+        "Date": "2022-07-11T07:00:00+03:00",
+        "EpochDate": 1657512000,
+        "Temperature": {
+          "Minimum": {
+            "Value": 72,
+            "Unit": "F",
+            "UnitType": 18
+          },
+          "Maximum": {
+            "Value": 87,
+            "Unit": "F",
+            "UnitType": 18
+          }
+        },
+        "Day": {
+          "Icon": 1,
+          "IconPhrase": "Sunny",
+          "HasPrecipitation": false
+        },
+        "Night": {
+          "Icon": 34,
+          "IconPhrase": "Mostly clear",
+          "HasPrecipitation": false
+        },
+        "Sources": [
+          "AccuWeather"
+        ],
+        "MobileLink": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=4&lang=en-us",
+        "Link": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=4&lang=en-us"
+      },
+      {
+        "Date": "2022-07-12T07:00:00+03:00",
+        "EpochDate": 1657598400,
+        "Temperature": {
+          "Minimum": {
+            "Value": 74,
+            "Unit": "F",
+            "UnitType": 18
+          },
+          "Maximum": {
+            "Value": 89,
+            "Unit": "F",
+            "UnitType": 18
+          }
+        },
+        "Day": {
+          "Icon": 1,
+          "IconPhrase": "Sunny",
+          "HasPrecipitation": false
+        },
+        "Night": {
+          "Icon": 35,
+          "IconPhrase": "Partly cloudy",
+          "HasPrecipitation": false
+        },
+        "Sources": [
+          "AccuWeather"
+        ],
+        "MobileLink": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=5&lang=en-us",
+        "Link": "http://www.accuweather.com/en/il/ramat-aviv/215835/daily-weather-forecast/215835?day=5&lang=en-us"
+      }
+    ]
+  }
