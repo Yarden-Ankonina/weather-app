@@ -9,8 +9,10 @@ export default function FiveDayForecast() {
     console.log(new Date(forecast[0].Date));
   return (
     <>
-        <div className='flex flex-col bg-slate-700'>
-            {forecast.map((dailyForecast,idx) => <WeatherBox dailyForecast={dailyForecast} key={idx} currentDate={new Date(forecast[0].Date)}/>)}
+        <div className=' flex flex-row mt-2 flex-wrap justify-center items-center'>
+            <div className='flex flex-col '>
+                {forecast.map((dailyForecast,idx) => <WeatherBox dailyForecast={dailyForecast} key={idx} currentDate={new Date(forecast[0].Date)}/>)}
+            </div>
         </div>
     </>
   )
