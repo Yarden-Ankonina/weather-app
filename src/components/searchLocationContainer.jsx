@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useQuery, useQueryClient } from 'react-query';
+import { mockFetchAutoCompleteCities } from '../utils/mockServerJsonService';
 
 import { fetchAutoCompleteCities } from '../utils/weatherService';
 import SearchLocation from './searchLocation'
@@ -12,7 +13,8 @@ export default function SearchLocationContainer() {
 
 
   const queryClient = useQueryClient();
-  const {data,status,isFetching, refetch } = useQuery(["inputQuery",searchQuery] , fetchAutoCompleteCities,{
+  // const {data,status,isFetching, refetch } = useQuery(["inputQuery",searchQuery] , fetchAutoCompleteCities,{
+  const {data,status,isFetching, refetch } = useQuery(["inputQuery",searchQuery] , mockFetchAutoCompleteCities,{
     manual:true,
     enabled:false,
     

@@ -6,12 +6,7 @@ import { isEnglishOnly } from "./wordUtil";
 
 const API_KEY = "N3XKvtPaWl6ZYCmmeoCXR6PutQk8xBzH";
 const API = "http://dataservice.accuweather.com";
-
-// const TEL_AVIV_COORDS = {
-//     locationKey : 215835,
-//     lat :32.1062555,
-//     long : 2034.7975642
-// }
+export const TEL_AVIV_LOCATION_KEY = 215854;
 
 
 function getUserLocation(){
@@ -100,13 +95,35 @@ export default function getFiveDayForecast(){
 export const fetchAutoCompleteCities = async ({queryKey})=>{
   const [_, query] = queryKey
   let englishOnly = isEnglishOnly(query);
-  if(query && query!= "" && englishOnly){
+  if(query && query!== "" && englishOnly){
     const apiEndPoint = "/locations/v1/cities/autocomplete";
+    const response = await fetch(`${API}${apiEndPoint}?apikey=${API_KEY}&q=${query}`);
     // const response = await fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${query}`);
-    const response = await fetch(`http://localhost:3001/autocomplete-search`);
     return response.json();
   }
 }
+
+export const fetchCurrentConditions = async ({queryKey})=>{
+    const [_, cityKey] = queryKey
+    let locationKey = cityKey;
+    cityKey ? locationKey = cityKey : locationKey = TEL_AVIV_LOCATION_KEY;
+    const apiEndPoint = "/currentconditions/v1/";
+    // const response = await fetch(`http://dataservice.accuweather.com/currentconditions/v1/215835?apikey=N3XKvtPaWl6ZYCmmeoCXR6PutQk8xBzH`);
+    const response = await fetch(`${API}${apiEndPoint}${TEL_AVIV_LOCATION_KEY}?apikey=${API_KEY}`);
+    return response.json();
+  }
+
+  
+
+export const fetchCityByLocationKey = async ({queryKey})=>{
+  const [_, cityKey] = queryKey
+  let locationKey = cityKey;
+  cityKey ? locationKey = cityKey : locationKey = TEL_AVIV_LOCATION_KEY;
+  const apiEndPoint = "/locations/v1/";
+  const response = await fetch(`${API}${apiEndPoint}${TEL_AVIV_LOCATION_KEY}?apikey=${API_KEY}`);
+  return response.json();
+}
+
 
 const geoPositionSearch = {
     Version: 1,
