@@ -4,14 +4,26 @@ import {useQuery, useQueryClient} from 'react-query';
 import { mockFetchCurrentWeather, mockFetchCityByLocationKey } from '../utils/mockServerJsonService';
 import { GetPCheck, fetchCurrentConditions } from '../utils/weatherService';
 
-export default function LocalForecast({city}) {
-    const onClick = ()=>{
+export default function LocalForecast({city, toggleDegree}) {
+   
+    const celsius = '&#8451;';
+    const fahrenheit = '&#8457;';
+    let degreeSign;
+    city.isCelsius ? degreeSign = celsius : degreeSign = fahrenheit;
 
+    const onClick = (e)=>{
+        toggleDegree()
+        city.isCelsius ? degreeSign = celsius : degreeSign = fahrenheit;
+        console.log(e.target.innerHTML = degreeSign)
     }
   return (
     <>
         <div className='flex flex-col items-start p-2 rounded-xl dark:text-slate-200 bg-cyan-50/60 border-solid border-cyan-800 dark:bg-sky-800 shadow-md dark:shadow-sm dark:shadow-slate-400 relative' >
-            <button onClick={onClick} className='absolute right-0 top-0 w-7 h-7 align-middle text-center hover:text-slate-700'>&#8451;</button>
+            {city.isCelsius ?
+                <button onClick={onClick} className='absolute right-0 top-0 w-7 h-7 align-middle text-center hover:text-slate-700'>&#8451;</button>
+                : <button onClick={onClick} className='absolute right-0 top-0 w-7 h-7 align-middle text-center hover:text-slate-700'>&#8457;</button>
+            }
+            
             
             <div className='flex border-b w-full border-solid'>
                 
@@ -25,8 +37,8 @@ export default function LocalForecast({city}) {
             <div className='flex w-full p-1 shadow justify-between'>
                 <div >Current Weather</div>
                 {city.isCelsius  
-                ?<div className='font-medium'>{city.temperture.celsius}<span>&deg;</span></div>
-                :<div className='font-medium'>{city.temperture.fahrenheit}&deg;</div>
+                    ?<div className='font-medium'>{city.temperture.celsius}<span>&deg;</span></div>
+                    :<div className='font-medium'>{city.temperture.fahrenheit}&deg;</div>
                 }
                 
             </div>

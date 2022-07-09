@@ -15,14 +15,15 @@ function App() {
  
   return (
     <QueryClientProvider client={queryClient} contextSharing={true}>
+      
         <ThemeProvider>
-              <Routes>
-                <Route path="/" element={<Layout/>}>
-                  <Route index  path="/" element={<Home/>} />
-                  <Route path="/favourites" element={<Favourites/>} />
-                  <Route path="/*" element={<NotFound/>} /> 
-                </Route>
-              </Routes>
+                <Routes>
+                  <Route path="/" element={<Layout/>}>
+                    <Route index  path="/" element={<Home/>} />
+                    <Route path="/favourites" element={<Favourites/>} />
+                    <Route path="/*" element={<NotFound/>} /> 
+                  </Route>
+                </Routes>
         </ThemeProvider>
     </QueryClientProvider>
   );

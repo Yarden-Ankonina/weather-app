@@ -1,4 +1,4 @@
-import {useQuery, useQueryClient, queryKey} from 'react-query'
+import {useQuery} from 'react-query'
 import { TEL_AVIV_LOCATION_KEY } from './weatherService';
 import { isEnglishOnly } from './wordUtil';
 
@@ -37,18 +37,18 @@ export const mockFetchFiveDayForecast = async()=>{
 }
 
 export const mockFetchAutoCompleteCities = async ({queryKey})=>{
-    const [_, query] = queryKey
+    const [, query] = queryKey
     let englishOnly = isEnglishOnly(query);
-    if(query && query!= "" && englishOnly){
-      const apiEndPoint = "/locations/v1/cities/autocomplete";
-      const response = await fetch(`${API}${apiEndPoint}`);
+    if(query && query!== "" && englishOnly){
+    //   const apiEndPoint = "/locations/v1/cities/autocomplete";
+      const response = await fetch(`${API}${API_ENUM.AutoComplete}`);
       return response.json();
     }
 }
 
 
 export const mockFetchCityByLocationKey = async ({queryKey})=>{
-    const [_, cityKey] = queryKey
+    const [, cityKey] = queryKey
     let locationKey = cityKey;
     cityKey ? locationKey = cityKey : locationKey = TEL_AVIV_LOCATION_KEY;
     console.log(cityKey, locationKey);
