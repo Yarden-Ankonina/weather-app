@@ -20,12 +20,6 @@ export const fetchCurrentWeather = async ()=>{
     console.log(data);
 }
 
-// export const fetchGeoPosition = async ()=>{
-//     const res = await fetch(API+API_ENUM.GeoPosition)
-//     const data = await res.json();
-//     console.log(data);
-// }
-
 export const fetchAutoCompleteSearch = async ()=>{
     const res = await fetch(API+API_ENUM.AutoComplete)
     const data = await res.json();
@@ -38,16 +32,8 @@ export const useGeoPosition = ()=>{
         return res.json()
     }
     const {data, status} = useQuery('position', fetchGeoPosition);
-
-    // return(
-    //     <div>
-    //         {data.res.map((position)=>(
-    //             <div>{position.}</div>
-    //         ))
-    //         }
-    //     </div>
-
-    // )
+    console.log(data)
 }
+
 // json-server --watch db.json --port 3001
 

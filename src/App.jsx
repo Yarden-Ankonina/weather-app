@@ -13,13 +13,8 @@ const queryClient = new QueryClient();
 
 function App() {
  
-  // fetchAutoCompleteSearch()
-  // fetchCurrentWeather()
-  // fetchDailyForecastsMock()
-  // fetchGeoPosition()
-
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient} contextSharing={true}>
         <ThemeProvider>
               <Routes>
                 <Route path="/" element={<Layout/>}>

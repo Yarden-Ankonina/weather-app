@@ -1,8 +1,11 @@
 import { data } from "autoprefixer";
-import { useQuery } from "react-query";
+import { useState } from "react";
+
+import { useQuery, useQueryClient, queryKey } from "react-query";
 
 const API_KEY = "N3XKvtPaWl6ZYCmmeoCXR6PutQk8xBzH";
 const API = "http://dataservice.accuweather.com";
+
 // const TEL_AVIV_COORDS = {
 //     locationKey : 215835,
 //     lat :32.1062555,
@@ -85,12 +88,21 @@ export default function getFiveDayForecast(){
   const fetchFiveforecast = async ()=> {
     const apiEndPoint = "/daily/5day/";
     const city = await getUserCity();
-    const response = await fetch((`${API}${apiEndPoint}${city.locationKey}?apikey=${API_KEY}`))
+    const response = await fetch(`${API}${apiEndPoint}${city.locationKey}?apikey=${API_KEY}`)
     return response.json();
   }
   // const {data,status} = useQuery("fiveDayForecast", fetchFiveforecast)
 
   return fiveDaysWeather;
+}
+export const fetchAutoCompleteCities = async ({queryKey})=>{
+  const [_, query] = queryKey
+  if(query && query!= ""){
+    const apiEndPoint = "/locations/v1/cities/autocomplete";
+    // const response = await fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${query}`);
+    const response = await fetch(`http://localhost:3001/autocomplete-search`);
+    return response.json();
+  }
 }
 
 const geoPositionSearch = {
