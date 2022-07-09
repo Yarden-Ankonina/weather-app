@@ -3,14 +3,14 @@ import React from 'react'
 export default function SearchOptions({data, showSearchOptions, setShowSearchOptions}) {
     const showForecast = (city)=>{
         setShowSearchOptions(false);
-        if(city === "currentLocation"){
-            console.log("currentLocation")
-        }
-        else{
-            console.log(city)
-        }
+        // if(city === "currentLocation"){
+        //     console.log("currentLocation")
+        // }
+        // else{
+        //     console.log(city)
+        // }
     }
-    console.log(showSearchOptions)
+    // console.log(showSearchOptions)
   return (
     <>
     {data && showSearchOptions?

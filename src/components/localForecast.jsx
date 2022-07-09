@@ -6,7 +6,7 @@ export default function LocalForecast() {
     const isCelsius = true;
   return (
     <>
-        <div className='flex flex-col items-start p-2 rounded-xl dark:text-slate-200 bg-sky-500 dark:bg-sky-800 shadow-md dark:shadow-sm dark:shadow-slate-400 relative' >
+        <div className='flex flex-col items-start p-2 rounded-xl dark:text-slate-200 bg-cyan-50/60 border-solid border-cyan-800 dark:bg-sky-800 shadow-md dark:shadow-sm dark:shadow-slate-400 relative' >
             <button className='absolute right-0 top-0 w-7 h-7 align-middle text-center hover:text-slate-700'>&#8451;</button>
             <div className='flex border-b w-full border-solid'>
                <img className='w-16 h-10' src='https://developer.accuweather.com/sites/default/files/01-s.png'/>

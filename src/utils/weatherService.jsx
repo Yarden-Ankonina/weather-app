@@ -2,6 +2,7 @@ import { data } from "autoprefixer";
 import { useState } from "react";
 
 import { useQuery, useQueryClient, queryKey } from "react-query";
+import { isEnglishOnly } from "./wordUtil";
 
 const API_KEY = "N3XKvtPaWl6ZYCmmeoCXR6PutQk8xBzH";
 const API = "http://dataservice.accuweather.com";
@@ -95,9 +96,11 @@ export default function getFiveDayForecast(){
 
   return fiveDaysWeather;
 }
+
 export const fetchAutoCompleteCities = async ({queryKey})=>{
   const [_, query] = queryKey
-  if(query && query!= ""){
+  let englishOnly = isEnglishOnly(query);
+  if(query && query!= "" && englishOnly){
     const apiEndPoint = "/locations/v1/cities/autocomplete";
     // const response = await fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${query}`);
     const response = await fetch(`http://localhost:3001/autocomplete-search`);

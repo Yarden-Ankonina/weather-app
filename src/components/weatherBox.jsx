@@ -7,7 +7,7 @@ export default function WeatherBox(props){
 
   const getCurrentDateProp = ()=>{
     if(isCurrentDate){
-      return "bg-emerald-300 dark:bg-emerald-800 ";
+      return "bg-cyan-500 dark:bg-emerald-800 ";
     }
   }
  
