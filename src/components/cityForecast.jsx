@@ -1,5 +1,8 @@
 import React from 'react'
 import {useQuery, useQueryClient} from 'react-query';
+import { useCityQuery } from '../hooks/useCityQuery';
+import { useCurrentConditionQuery } from '../hooks/useCurrentConditionQuery';
+import { useTemperature } from '../hooks/useTemperature';
 import { mockFetchCityByLocationKey, mockFetchCurrentWeather } from '../utils/mockServerJsonService';
 import { fetchCityByLocationKey, TEL_AVIV_LOCATION_KEY } from '../utils/weatherService';
 
@@ -8,13 +11,8 @@ import LocalForecast from './localForecast'
 
 
 export default function CityForecast() {
-
-  const toggleDegree = ()=>{
-    console.log(city)
-    if(city){
-      city.isCelsius = !city.isCelsius;
-    }
-  }
+  
+  const {isCelsius,toggleTemperatureScale} = useTemperature();
 
   const createCity = (cityData, currentConditionsData)=>{
     if(cityData && currentConditionsData){
@@ -23,7 +21,7 @@ export default function CityForecast() {
         cityName : cityData.AdministrativeArea.EnglishName,
         countryName : cityData.Country.EnglishName,
         key : cityData.Key,
-        isCelsius : true,
+        isCelsius : isCelsius,
         temperture :{
           celsius : currentConditionsData[0].Temperature.Metric.Value,
           fahrenheit : currentConditionsData[0].Temperature.Imperial.Value,
@@ -41,20 +39,12 @@ export default function CityForecast() {
   let key = TEL_AVIV_LOCATION_KEY;
   // const {data, status} = useQuery(["cities", key], fetchCityByLocationKey)
   
-  const useCityQuery = ()=>{
-    const {data, status} = useQuery(["cities", key], mockFetchCityByLocationKey)
-    return {data, status};
-  }
-  const {data : cityData,status : cityStatus } = useCityQuery();
+  
+  const {data : cityData,status : cityStatus } = useCityQuery(key);
 
   console.log(cityStatus)
   console.log(cityData)
 
- 
-  const useCurrentConditionQuery = ()=>{
-    const {data, status} = useQuery(["weather", key], mockFetchCurrentWeather)
-    return {data, status};
-  }    
   const {data: currentConditionsData,status: currentConditionsStatus} = useCurrentConditionQuery()
   console.log(currentConditionsData)
   console.log(currentConditionsStatus)
@@ -76,8 +66,8 @@ export default function CityForecast() {
            {
             city ?
             <>
-              <LocalForecast city={city} toggleDegree={toggleDegree}/>
-              <FiveDayForecast city={city}/>
+              <LocalForecast city={city} isCelsius={isCelsius} toggleScale={toggleTemperatureScale}/>
+              <FiveDayForecast city={city} isCelsius={isCelsius}/>
             </>
             :null
            }

@@ -1,15 +1,16 @@
 import React from 'react'
+import { toCelsius } from '../utils/convertScale';
 
-export default function WeatherBox(props){
-  const dailyForcast = props.dailyForecast;
-  const date = new Date(dailyForcast.Date)
-  const isCurrentDate = (date.getDate() === props.currentDate.getDate());
+export default function WeatherBox({dailyForecast, key, isCelsius, currentDate}){
+  const date = new Date(dailyForecast.Date)
+  const isCurrentDate = (date.getDate() === currentDate.getDate());
 
   const getCurrentDateProp = ()=>{
     if(isCurrentDate){
       return "bg-cyan-500 dark:bg-emerald-800 ";
     }
   }
+  
  
   return (
     <>  
@@ -18,7 +19,11 @@ export default function WeatherBox(props){
               <div className='text-lg self-start'>{date.toUTCString().slice(0,3)}</div>
             </div>
             <div className='flex '>
-              <div className='font-bold mr-1'>{dailyForcast.Temperature.Maximum.Value}&deg;</div>
+              {
+                isCelsius ? 
+                <div className='font-bold mr-1'>{Math.floor(toCelsius(dailyForecast.Temperature.Maximum.Value))}&deg;</div>
+                :<div className='font-bold mr-1'>{dailyForecast.Temperature.Maximum.Value}&deg;</div>
+              }
             </div>
         </div>
     </>
