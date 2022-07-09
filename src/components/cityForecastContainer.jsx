@@ -42,15 +42,15 @@ export default function CityForecastContainer() {
   
   const {data : cityData,status : cityStatus } = useCityQuery(key);
 
-  console.log(cityStatus)
-  console.log(cityData)
+  // console.log(cityStatus)
+  // console.log(cityData)
 
   const {data: currentConditionsData,status: currentConditionsStatus} = useCurrentConditionQuery()
-  console.log(currentConditionsData)
-  console.log(currentConditionsStatus)
+  // console.log(currentConditionsData)
+  // console.log(currentConditionsStatus)
 
   const city = createCity(cityData, currentConditionsData);
-  console.log(city)
+  // console.log(city)
   
   // const {data, status} = useQuery(["weather", city.key], fetchCurrentConditions)
   const GetCityForest = ()=>{

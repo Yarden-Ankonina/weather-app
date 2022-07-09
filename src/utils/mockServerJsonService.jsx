@@ -51,7 +51,7 @@ export const mockFetchCityByLocationKey = async ({queryKey})=>{
     const [, cityKey] = queryKey
     let locationKey = cityKey;
     cityKey ? locationKey = cityKey : locationKey = TEL_AVIV_LOCATION_KEY;
-    console.log(cityKey, locationKey);
+    // console.log(cityKey, locationKey);
     const apiEndPoint = "search-by-location-key";
     const response = await fetch(`${API}${apiEndPoint}`);
     return response.json();
@@ -65,7 +65,7 @@ export const useGeoPosition = ()=>{
         return res.json()
     }
     const {data, status} = useQuery('position', fetchGeoPosition);
-    console.log(data)
+    // console.log(data)
 }
 
 // json-server --watch db.json --port 3001
