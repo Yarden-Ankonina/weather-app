@@ -98,8 +98,6 @@ import { DEFAULT_LOCATION_KEY } from '../utils/settings';
 export default function CityForecastContainer() {
   const [locationKey, SetLocationKey] = useState(DEFAULT_LOCATION_KEY);
   const {data :city ,status} = useQuery(['city', locationKey],getCityForecast);
-  console.log(status)
-  console.log(city)
   return (
     <>
       {status === 'error'?
