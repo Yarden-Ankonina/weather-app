@@ -1,9 +1,8 @@
 import React from 'react'
-import getFiveDayForecast from '../utils/weatherService';
 import WeatherBox from './weatherBox'
 
 export default function FiveDayForecast({city}) {
-    const forecast = city.fiveDayForecast;
+  const forecast = city.fiveDayForecast;
   return (
     <>
         <div className=' flex w-full flex-row mt-2 flex-wrap justify-center items-center '>

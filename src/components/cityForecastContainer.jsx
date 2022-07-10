@@ -85,7 +85,7 @@
 //   )
 // }
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {useQuery} from 'react-query'
 
 import FiveDayForecast from './fiveDayForecast';
@@ -98,6 +98,8 @@ import { DEFAULT_LOCATION_KEY } from '../utils/settings';
 export default function CityForecastContainer() {
   const [locationKey, SetLocationKey] = useState(DEFAULT_LOCATION_KEY);
   const {data :city ,status} = useQuery(['city', locationKey],getCityForecast);
+  console.log(status)
+  console.log(city)
   return (
     <>
       {status === 'error'?
