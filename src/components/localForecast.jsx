@@ -1,20 +1,11 @@
-import React from 'react';
-import {useQuery, useQueryClient} from 'react-query';
+import React, { useContext } from 'react';
+import { TemperatureContext } from '../contexts/temperatureContext';
 
-import { mockFetchCurrentWeather, mockFetchCityByLocationKey } from '../utils/mockServerJsonService';
-import { GetPCheck, fetchCurrentConditions } from '../utils/weatherService';
+export default function LocalForecast({city}) {
+    const {isCelsius,toggleTemperatureScale,setIsCelsius} = useContext(TemperatureContext)
 
-export default function LocalForecast({city, isCelsius, toggleScale}) {
-   
-    const celsius = '&#8451;';
-    const fahrenheit = '&#8457;';
-    let degreeSign;
-    isCelsius ? degreeSign = celsius : degreeSign = fahrenheit;
-
-    const onClick = (e)=>{
-        toggleScale()
-        isCelsius ? degreeSign = celsius : degreeSign = fahrenheit;
-        console.log(e.target.innerHTML = degreeSign)
+    const onClick = ()=>{
+        toggleTemperatureScale()
     }
   return (
     <>
@@ -23,8 +14,6 @@ export default function LocalForecast({city, isCelsius, toggleScale}) {
                 <button onClick={onClick} className='absolute right-0 top-0 w-7 h-7 align-middle text-center hover:text-slate-700'>&#8451;</button>
                 : <button onClick={onClick} className='absolute right-0 top-0 w-7 h-7 align-middle text-center hover:text-slate-700'>&#8457;</button>
             }
-            
-            
             <div className='flex border-b w-full border-solid'>
                 
                <img className='w-16 h-10' src='https://developer.accuweather.com/sites/default/files/01-s.png'/>
@@ -32,7 +21,6 @@ export default function LocalForecast({city, isCelsius, toggleScale}) {
                     ?<div className='text-3xl font-sans font-medium'>{city.temperture.celsius}<span>&deg;</span></div>
                     :<div className='text-3xl font-sans font-medium'>{city.temperture.fahrenheit}&deg;</div>
                 }
-               
             </div>
             <div className='flex w-full p-1 shadow justify-between'>
                 <div >Current Weather</div>

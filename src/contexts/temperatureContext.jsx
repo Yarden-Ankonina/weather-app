@@ -11,7 +11,8 @@ export default function TemperatureProvider({children}) {
  
   const value ={
     isCelsius,
-    toggleTemperatureScale
+    toggleTemperatureScale,
+    setIsCelsius
   }
 
   return (

@@ -2,6 +2,7 @@ import React from "react";
 
 import CityForecastContainer from "../components/cityForecastContainer";
 import SearchLocationContainer from "../components/searchLocationContainer";
+
 export default function Home() {
   return (
     <>
