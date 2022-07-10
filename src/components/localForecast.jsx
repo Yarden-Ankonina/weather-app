@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
+
 import { TemperatureContext } from '../contexts/temperatureContext';
 
 export default function LocalForecast({city}) {
-    const {isCelsius,toggleTemperatureScale,setIsCelsius} = useContext(TemperatureContext)
+    const {isCelsius,toggleTemperatureScale} = useContext(TemperatureContext)
 
     const onClick = ()=>{
         toggleTemperatureScale()
