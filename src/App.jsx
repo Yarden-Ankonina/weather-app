@@ -8,7 +8,7 @@ import Favourites from "./pages/favourites";
 import Home from "./pages/home";
 import NotFound from "./pages/notFound";
 import { ThemeProvider } from "./contexts/themeContext";
-import TemperatureProvider from "./contexts/temperatureContext";
+import WeatherAppProvider from "./contexts/weatherAppContext";
 
 const queryClient = new QueryClient();
 
@@ -17,7 +17,7 @@ function App() {
     <>
     <QueryClientProvider client={queryClient} contextSharing={true}>
         <ThemeProvider>
-          <TemperatureProvider>
+          <WeatherAppProvider>
               <Routes>
                 <Route path="/" element={<Layout/>}>
                   <Route index path="/" element={<Home/>} />
@@ -25,7 +25,7 @@ function App() {
                   <Route path="/*" element={<NotFound/>} /> 
                 </Route>
               </Routes>
-          </TemperatureProvider>
+          </WeatherAppProvider>
         </ThemeProvider>
     </QueryClientProvider>
     </>

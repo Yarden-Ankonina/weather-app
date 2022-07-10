@@ -7,10 +7,10 @@ export default function Favourites() {
     <>
     <div className='flex items-center justify-center h-5/6'>
       <div className='flex flex-wrap justify-center items-center  '>
-        {/* <CityFavouriteContainer/>
         <CityFavouriteContainer/>
         <CityFavouriteContainer/>
-        <CityFavouriteContainer/> */}
+        <CityFavouriteContainer/>
+        <CityFavouriteContainer/>
       </div>
     </div>
    

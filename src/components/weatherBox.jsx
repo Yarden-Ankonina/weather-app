@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { TemperatureContext } from '../contexts/temperatureContext';
+import { WeatherAppContext } from '../contexts/weatherAppContext';
 import { toCelsius } from '../utils/convertScale';
 
 export default function WeatherBox({dailyForecast, currentDate}){
-  const {isCelsius} = useContext(TemperatureContext);
+  const {isCelsius} = useContext(WeatherAppContext);
   const date = new Date(dailyForecast.Date)
   const isCurrentDate = (date.getDate() === currentDate.getDate());
 

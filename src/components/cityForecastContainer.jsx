@@ -85,19 +85,15 @@
 //   )
 // }
 
-import React, { useState } from 'react'
-import {useQuery} from 'react-query'
+import React, { useContext, useState } from 'react'
 
 import FiveDayForecast from './fiveDayForecast';
 import LocalForecast from './localForecast';
 
-import { getCityForecast } from '../utils/getCityForecast'
-import { DEFAULT_LOCATION_KEY } from '../utils/settings';
-
+import { WeatherAppContext } from '../contexts/weatherAppContext';
 
 export default function CityForecastContainer() {
-  const [locationKey, SetLocationKey] = useState(DEFAULT_LOCATION_KEY);
-  const {data :city ,status} = useQuery(['city', locationKey],getCityForecast);
+  const {city, status} = useContext(WeatherAppContext);
   return (
     <>
       {status === 'error'?

@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { TemperatureContext } from "../contexts/temperatureContext";
+import { WeatherAppContext } from "../contexts/WeatherAppContext";
 
 export const useTemperature = ()=>{
-    return useContext(TemperatureContext);
+    return useContext(WeatherAppContext);
 }

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 
-import { TemperatureContext } from '../contexts/temperatureContext';
+import { WeatherAppContext } from '../contexts/weatherAppContext';
 
 export default function LocalForecast({city}) {
-    const {isCelsius,toggleTemperatureScale} = useContext(TemperatureContext)
+    const {isCelsius,toggleWeatherAppScale} = useContext(WeatherAppContext)
 
     const onClick = ()=>{
-        toggleTemperatureScale()
+        toggleWeatherAppScale()
     }
   return (
     <>
@@ -47,7 +47,7 @@ export default function LocalForecast({city}) {
              <div>
                 <button className='flex items-center justify-center text-3xl dark:text-yellow-500 text-yellow-700 hover:text-yellow-600  hover:dark:text-yellow-400'>&#9734;</button>
              </div>
-                <a className=' flex items-center text-slate-800 dark:text-slate-300' href={`${city.Link}`} target="_blank"  rel="noreferrer">   <div className='mr-2'>More Information</div><img alt="more information" className='w-7 h-7 flex justify-center items-center hover:scale-105' src="https://img.icons8.com/windows/344/external-link-squared.png"/></a>
+                <a className=' flex items-center text-slate-800 dark:text-slate-300' href={`${city.link}`} target="_blank"  rel="noreferrer">   <div className='mr-2'>More Information</div><img alt="more information" className='w-7 h-7 flex justify-center items-center hover:scale-105' src="https://img.icons8.com/windows/344/external-link-squared.png"/></a>
             </div>
         </div>
     </>

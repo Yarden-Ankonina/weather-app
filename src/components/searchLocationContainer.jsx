@@ -42,7 +42,6 @@
 import React, { useState } from 'react'
 import {useQuery} from 'react-query'
 
-import SearchLocation from './searchLocation'
 import { getCitiesByQuery } from '../utils/getCitiesByQuery';
 
 export default function SearchLocationContainer() {
@@ -54,7 +53,9 @@ export default function SearchLocationContainer() {
   return (
     <>
         <div className='flex flex-col w-full justify-center items-center'>
-          <SearchLocation />
+          <div className='mt-2 flex flex-row ' >
+            <input className='w-64 p-0.5 pl-2 bg-sky-50 dark:bg-zinc-800 border border-solid border-slate-800 dark:border-slate-500 dark:border-2 rounded dark:text-zinc-300'  type="text" placeholder='&#128269; Search For Location'/>
+          </div>
           {/* <SearchOptions data={data} showSearchOptions={showSearchOptions} setShowSearchOptions={setShowSearchOptions}/> */}
         </div>
     </>
