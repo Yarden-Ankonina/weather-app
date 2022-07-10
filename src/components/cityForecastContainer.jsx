@@ -85,24 +85,40 @@
 //   )
 // }
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import {useQuery} from 'react-query'
+
+import FiveDayForecast from './fiveDayForecast';
+import LocalForecast from './localForecast';
+
 import { getCityForecast } from '../utils/getCityForecast'
 import { DEFAULT_LOCATION_KEY } from '../utils/settings';
 
+
 export default function CityForecastContainer() {
   const [locationKey, SetLocationKey] = useState(DEFAULT_LOCATION_KEY);
-  const [isCity, SetIsCity] = useState(false);
-
-  const city = getCityForecast(locationKey)
-
-
+  const {data :city ,status} = useQuery(['city', locationKey],getCityForecast);
+  console.log(city)
   return (
     <>
-      {
-        city?
-        <div>City</div>
+      {status === 'error'?
+        <div>Something Went Wrong, Please Try Again Later</div>
         :<></>
+      }
+      {status === 'loading'?
+        <div>...Loading</div>
+        :<></>
+      }
+       {status === 'success'?
+        <div className='bg-slate-50 w-3/4 mx-2 lg:w-1/4 md:w-1/3 sm:w-1/2  dark:bg-slate-900/30 bg-opacity-20 dark:border-none border border-solid border-cyan-600 rounded-xl'>
+        <LocalForecast city={city} isCelsius={city.isCelsius}/>
+        {/* <FiveDayForecast city={city} isCelsius={city.isCelsius}/> */}
+        </div>
+      :<></>
       }
     </>
   )
 }
+
+
+  

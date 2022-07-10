@@ -1,4 +1,4 @@
-import { DEFAULT_LOCATION_KEY } from "./settings";
+// import {queryKey} from 'react-query'
 
 const getCityForecastAdapter = (locationData,currentConditions,fiveDayForecastData)=>{
     if(!locationData || !currentConditions || !fiveDayForecastData) return null;
@@ -20,7 +20,8 @@ const getCityForecastAdapter = (locationData,currentConditions,fiveDayForecastDa
     return city;
 }
 
-export const getCityForecast = async (locationKey) => {
+export const getCityForecast = async ({queryKey}) => {
+    const [,locationKey] = queryKey
     const baseUrl =
     process.env.REACT_APP_ENVIRONMENT === "dev"
       ? "http://localhost:3001"
@@ -30,6 +31,7 @@ export const getCityForecast = async (locationKey) => {
         currentConditions : `${baseUrl}/currentconditions/v1/${locationKey}?apikey=${process.env.REACT_APP_API_KEY}`,
         fiveDayForecast : `${baseUrl}/forecasts/v1/daily/5day/${locationKey}?apikey=${process.env.REACT_APP_API_KEY}`,
     }
+
     const locationRes = await fetch(endPoints.locationRequest);
     const location = await locationRes.json();
     const currentConditionsRes = await fetch(endPoints.currentConditions);
