@@ -6,3 +6,15 @@
     from = "/*"
     to = "/index.html"
     status = 200
+
+[[redirects]]
+    from = "/"
+    to = "http://dataservice.accuweather.com/locations/v1/215854?apikey=N3XKvtPaWl6ZYCmmeoCXR6PutQk8xBzH"
+    status = 200
+    force = true
+
+[[redirects]]
+    from = "/"
+    to = "http://dataservice.accuweather.com/locations/v1/215854?apikey=N3XKvtPaWl6ZYCmmeoCXR6PutQk8xBzH"
+    status = 200
+    force = true
