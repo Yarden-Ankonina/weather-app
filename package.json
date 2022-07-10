@@ -26,7 +26,7 @@
     "eject": "react-scripts eject",
     "dev": "set REACT_APP_ENVIRONMENT=dev&npm run start",
     "demo": "set REACT_APP_ENVIRONMENT=demo& npm run start",
-    "deploy": "set REACT_APP_ENVIRONMENT=deploy & start https://yarden-weather-app.netlify.app/ & node bin/www"
+    "deploy": "set REACT_APP_ENVIRONMENT=demo & start https://yarden-weather-app.netlify.app/ & node bin/www"
   },
   "eslintConfig": {
     "extends": [
