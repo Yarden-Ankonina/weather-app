@@ -26,9 +26,6 @@ export const getCityForecast = async ({queryKey}) => {
     isDevMode
       ? "http://localhost:3001"
       : "http://dataservice.accuweather.com";
-      console.log(process.env.REACT_APP_ENVIRONMENT)
-      console.log(isDevMode)
-      console.log(baseUrl)
     const endPoints = {
         locationRequest : `${baseUrl}/locations/v1/${locationKey}?apikey=${process.env.REACT_APP_API_KEY}`,
         currentConditions : `${baseUrl}/currentconditions/v1/${locationKey}?apikey=${process.env.REACT_APP_API_KEY}`,
