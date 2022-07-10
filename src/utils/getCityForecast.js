@@ -1,4 +1,4 @@
-// import {queryKey} from 'react-query'
+import { isDevMode } from "./settings";
 
 const getCityForecastAdapter = (locationData,currentConditions,fiveDayForecastData)=>{
     if(!locationData || !currentConditions || !fiveDayForecastData) return null;
@@ -23,7 +23,7 @@ const getCityForecastAdapter = (locationData,currentConditions,fiveDayForecastDa
 export const getCityForecast = async ({queryKey}) => {
     const [,locationKey] = queryKey
     const baseUrl =
-    process.env.REACT_APP_ENVIRONMENT === "dev"
+    isDevMode
       ? "http://localhost:3001"
       : "http://dataservice.accuweather.com";
     const endPoints = {
