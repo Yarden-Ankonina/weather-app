@@ -1,0 +1,1 @@
+export const DEFAULT_LOCATION_KEY =  215854

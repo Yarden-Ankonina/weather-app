@@ -85,13 +85,24 @@
 //   )
 // }
 
-import React from 'react'
+import React, { useState } from 'react'
 import { getCityForecast } from '../utils/getCityForecast'
+import { DEFAULT_LOCATION_KEY } from '../utils/settings';
 
 export default function CityForecastContainer() {
-  getCityForecast()
+  const [locationKey, SetLocationKey] = useState(DEFAULT_LOCATION_KEY);
+  const [isCity, SetIsCity] = useState(false);
+
+  const city = getCityForecast(locationKey)
+
+
   return (
     <>
+      {
+        city?
+        <div>City</div>
+        :<></>
+      }
     </>
   )
 }
