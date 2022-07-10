@@ -15,7 +15,7 @@ export default function Footer() {
     <div className='flex justify-between items-center dark:bg-neutral-900 bg-slate-100 border-t border-slate-400 dark:border-none h-fit p-0.5 fixed w-full bottom-0 text-slate-200 '>
       <div className='flex items-center'>
         <div className='text-xs mx-1 dark:text-slate-500 text-slate-900 font-medium'>Made By Yarden Ankonina</div>
-          <a href="https://github.com/Yarden-Ankonina/weather-app" rel="noreferrer" target="_blank">
+          <a href="https://github.com/Yarden-Ankonina/weather-app" rel="noreferrer" target="_blank" >
             {isDarkMode 
               ? <img className='w-8'src={darkGitLogo} alt="Github Link" />
               : <img className='w-8'src={lightGitLogo} alt="Github Link" />

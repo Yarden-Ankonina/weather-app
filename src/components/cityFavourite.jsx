@@ -20,7 +20,7 @@ export default function CityFavourite() {
                     ?<div className='text-3xl font-sans font-medium'>{cityForcast.forecast.Temperature.Metric.Value}<span>&deg;</span></div>
                     :<div>{cityForcast.forecast.Temperature.Imperial.Value}&#8457;</div>
                 }
-                <img className='w-16 h-10' src='https://developer.accuweather.com/sites/default/files/01-s.png'/>
+                <img alt=" " className='w-16 h-10' src='https://developer.accuweather.com/sites/default/files/01-s.png'/>
             </div>
            
         </div>

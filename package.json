@@ -19,13 +19,13 @@
     "react-error-overlay": "6.0.9"
   },
   "scripts": {
-    "mock-web": "json-server --watch db.json --port 3001",
+    "mock-web": "json-server --watch db.json --routes routes.json --port 3001 ",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "set REACT_APP_ENVIRONMENT=dev & npm run start",
-    "demo": "set REACT_APP_ENVIRONMENT=demo & npm run start",
+    "dev": "set REACT_APP_ENVIRONMENT=dev&npm run start",
+    "demo": "set REACT_APP_ENVIRONMENT=demo& npm run start",
     "deploy": "set REACT_APP_ENVIRONMENT=deploy & start https://yarden-weather-app.netlify.app/ & node bin/www"
   },
   "eslintConfig": {

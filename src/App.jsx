@@ -9,30 +9,27 @@ import Home from "./pages/home";
 import NotFound from "./pages/notFound";
 import { ThemeProvider } from "./contexts/themeContext";
 import TemperatureProvider from "./contexts/temperatureContext";
-import { getCityForecast } from "./utils/getCityForecast";
 
 const queryClient = new QueryClient();
 
 function App() {
-  console.log(process.env)
-  
   return (
     <>
-      <pre>{process.env.REACT_APP_}</pre>
+    <QueryClientProvider client={queryClient} contextSharing={true}>
+        <ThemeProvider>
+          <TemperatureProvider>
+              <Routes>
+                <Route path="/" element={<Layout/>}>
+                  <Route index path="/" element={<Home/>} />
+                  <Route path="/favourites" element={<Favourites/>} />
+                  <Route path="/*" element={<NotFound/>} /> 
+                </Route>
+              </Routes>
+          </TemperatureProvider>
+        </ThemeProvider>
+    </QueryClientProvider>
     </>
-    // <QueryClientProvider client={queryClient} contextSharing={true}>
-    //     <ThemeProvider>
-    //       <TemperatureProvider>
-    //           <Routes>
-    //             <Route path="/" element={<Layout/>}>
-    //               <Route index path="/" element={<Home/>} />
-    //               <Route path="/favourites" element={<Favourites/>} />
-    //               <Route path="/*" element={<NotFound/>} /> 
-    //             </Route>
-    //           </Routes>
-    //       </TemperatureProvider>
-    //     </ThemeProvider>
-    // </QueryClientProvider>
+
   )
 }
 

@@ -56,7 +56,7 @@ export default function LocalForecast({city, isCelsius, toggleScale}) {
             </div>
             <div className='flex w-full p-1 shadow justify-between'>
              <div></div>
-                <a className=' flex text-slate-800 dark:text-slate-300' href={`${city.Link}`} target="_blank">   <div className='mr-2'>More Information</div><img className='w-7 h-7 flex justify-center items-center hover:scale-105' src="https://img.icons8.com/windows/344/external-link-squared.png"/></a>
+                <a className=' flex text-slate-800 dark:text-slate-300' href={`${city.Link}`} target="_blank"  rel="noreferrer">   <div className='mr-2'>More Information</div><img className='w-7 h-7 flex justify-center items-center hover:scale-105' src="https://img.icons8.com/windows/344/external-link-squared.png"/></a>
             </div>
         </div>
     </>
