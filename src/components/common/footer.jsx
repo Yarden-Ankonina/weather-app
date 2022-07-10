@@ -1,14 +1,12 @@
-import React from 'react'
-
-import { useTheme } from '../../hooks/useTheme';
-
+import React, { useContext } from 'react'
+import { ThemeContext } from '../../contexts/themeContext';
 
 export default function Footer() {
 
   const darkGitLogo = "https://img.icons8.com/nolan/344/github.png";
   const lightGitLogo = "https://img.icons8.com/glyph-neue/344/github.png";
 
-  const {isDarkMode} = useTheme();
+  const {isDarkMode} = useContext(ThemeContext);
 
   return (
     <>

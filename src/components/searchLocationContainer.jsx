@@ -47,9 +47,6 @@ import { getCitiesByQuery } from '../utils/getCitiesByQuery';
 export default function SearchLocationContainer() {
   const [searchQuery, SetSearchQuery] = useState("");
   const {data:cities, status} = useQuery(['citiesByQuery',searchQuery], getCitiesByQuery);
-  console.log(cities)
-  console.log(status)
-
   return (
     <>
         <div className='flex flex-col w-full justify-center items-center'>

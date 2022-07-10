@@ -1,17 +1,13 @@
-import {React} from 'react'
+import {React, useContext} from 'react'
 import { Link } from 'react-router-dom'
-
-import { useTheme } from '../../hooks/useTheme';
-
-
-
+import { ThemeContext } from '../../contexts/themeContext';
 
 export default function Header() {
 
   const sunLogo = "https://img.icons8.com/dusk/344/summer.png";
   const moonLogo = "https://img.icons8.com/dusk/344/partly-cloudy-night--v1.png";
 
-  const {toggleTheme, isDarkMode} = useTheme();
+  const {toggleTheme, isDarkMode} = useContext(ThemeContext);
 
   return (
     <>

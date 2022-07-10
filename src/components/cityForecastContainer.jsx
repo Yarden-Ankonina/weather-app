@@ -85,7 +85,7 @@
 //   )
 // }
 
-import React, { useContext, useState } from 'react'
+import React, {useContext} from 'react'
 
 import FiveDayForecast from './fiveDayForecast';
 import LocalForecast from './localForecast';
