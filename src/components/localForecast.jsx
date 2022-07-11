@@ -7,7 +7,7 @@ export default function LocalForecast({city}) {
 
     const favouriteClick = ()=>{
         city.isFavourite = !city.isFavourite;
-        SetFavourites({...favourites, city:{city}});
+        SetFavourites({...favourites, ...city ,city:city});
     }
     console.log(favourites);
     const numToTwoChar = (num)=>{
