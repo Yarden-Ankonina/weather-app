@@ -15,10 +15,7 @@ export default function CityFavourite({isCelsius, city}) {
                 <div className='text-slate-800 dark:text-slate-300'>{city.countryName}</div>
             </div>
             <div className='flex'>
-                {isCelsius 
-                    ?<div className='text-3xl font-sans font-medium'>{Math.floor(city.temperture.celsius)}<span>&deg;</span></div>
-                    :<div className='text-3xl font-sans font-medium'>{Math.floor(city.temperture.fahrenheit)}&#8457;</div>
-                }
+                <div className='text-3xl font-sans font-medium'>{isCelsius ?<>{Math.floor(city.temperture.celsius)}&deg;</>:<>{Math.floor(city.temperture.fahrenheit)}&deg;</>}</div>
                 <img alt=" " className='w-16 h-10' src='https://developer.accuweather.com/sites/default/files/01-s.png'/>
             </div>
            

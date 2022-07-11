@@ -10,6 +10,7 @@ const getCityForecastAdapter = (locationData,currentConditions,fiveDayForecastDa
         countryName : locationData.Country.EnglishName,
         key : locationData.Key,
         isCelsius : true,
+        isFavourite : false,
         temperture :{
             celsius : currentConditions[0].Temperature.Metric.Value,
             fahrenheit : currentConditions[0].Temperature.Imperial.Value,

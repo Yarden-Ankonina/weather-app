@@ -11,19 +11,22 @@ export default function WeatherAppProvider({children}) {
   
   const [isCelsius, setIsCelsius] = useState(true);
   const [locationKey, SetLocationKey] = useState(DEFAULT_LOCATION_KEY);
+  const [favourites, SetFavourites] = useState({});
   const {data :city ,status} = useQuery(['city', locationKey],getCityForecast);
 
   const toggleWeatherAppScale = ()=>{
     isCelsius ? setIsCelsius(false) : setIsCelsius(true)
   }
   const value ={
-    isCelsius,
     toggleWeatherAppScale,
+    isCelsius,
     setIsCelsius,
-    SetLocationKey,
     locationKey,
+    SetLocationKey,
     city,
-    status
+    status,
+    favourites,
+    SetFavourites
   }
 
   return (
