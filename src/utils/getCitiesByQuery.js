@@ -9,7 +9,14 @@ export const getCitiesByQuery = async ({ queryKey }) => {
     : "http://dataservice.accuweather.com";
   const autoCompleteEndPoint = `${baseUrl}/locations/v1/cities/autocomplete?apikey=${process.env.REACT_APP_API_KEY}&q=${query}`;
   if (isEnglishOnly(query)) {
-    const result = await fetch(autoCompleteEndPoint);
-    return result.json();
+    try{
+      const result = await fetch(autoCompleteEndPoint);
+      return result.json();
+    }
+    catch(error){
+      console.log(error)
+    }
+
+    
   }
 };

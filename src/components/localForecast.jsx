@@ -8,6 +8,13 @@ export default function LocalForecast({city}) {
     const onClick = ()=>{
         toggleWeatherAppScale()
     }
+    const numToTwoChar = (num)=>{
+        const str = "" + num;
+        if(num<10){
+            return str.padStart(2,'0') ;
+        }
+        return str
+    }
   return (
     <>
         <div className='flex flex-col items-start p-2 rounded-xl dark:text-slate-200 bg-cyan-50/60 border-solid border-cyan-800 dark:bg-sky-800 shadow-md dark:shadow-sm dark:shadow-slate-400 relative' >
@@ -15,25 +22,22 @@ export default function LocalForecast({city}) {
                 <button onClick={onClick} className='absolute right-0 top-0 w-7 h-7 align-middle text-center hover:text-slate-700'>&#8451;</button>
                 : <button onClick={onClick} className='absolute right-0 top-0 w-7 h-7 align-middle text-center hover:text-slate-700'>&#8457;</button>
             }
-            <div className='flex items-center justify-start border-b w-full border-solid'>
-               <img alt="weatherIcon" className='w-16 h-10' src='https://developer.accuweather.com/sites/default/files/01-s.png'/>
+            <div className='flex items-center justify-start pb-2 border-b w-full border-solid dark:border-slate-700 border-slate-300'>
+            {/* https://developer.accuweather.com/sites/default/files/01-s.png */}
+               {/* <img alt="weatherIcon" className='w-16 h-10' src='https://developer.accuweather.com/sites/default/files/01-s.png'/> */}
+               <img alt="weatherIcon" className='w-16 h-10' src={"https://developer.accuweather.com/sites/default/files/" + numToTwoChar(city.weatherIcon) + "-s.png"} />
                 <div className=' text-slate-900 mr-3 text-3xl dark:text-slate-200 font-medium '>{city.cityName}</div>
-                {/* {isCelsius 
-                    ?<div className='text-3xl font-sans font-medium'>{city.temperture.celsius}<span>&deg;</span></div>
-                    :<div className='text-3xl font-sans font-medium'>{city.temperture.fahrenheit}&deg;</div>
-                } */}
             </div>
             <div className='flex items-center w-full p-1 shadow justify-between'>
-                <div className='' >Current Weather</div>
+                <div className='font-medium' >Current Weather</div>
                 {isCelsius  
                     ?<div className='text-2xl font-medium'>{city.temperture.celsius}<span>&deg;</span></div>
                     :<div className='text-2xl font-medium'>{city.temperture.fahrenheit}&deg;</div>
                 }
-                
             </div>
             <div className='flex w-full p-1 shadow justify-between'>
                 <div>City</div>
-                <div className=' text-slate-900 dark:text-slate-200'>{city.cityName}</div>
+                <div className=' text-slate-900 dark:text-slate-200'>{city.cityArea}</div>
             </div>
             <div className='flex w-full p-1 shadow justify-between'>
                 <div>Country/State</div>
