@@ -11,7 +11,5 @@ export const getCitiesByQuery = async ({ queryKey }) => {
   if (isEnglishOnly(query)) {
     const result = await fetch(autoCompleteEndPoint);
     return result.json();
-  } else {
-    return null;
   }
 };

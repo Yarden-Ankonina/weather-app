@@ -324,9 +324,7 @@
       }
    ]
    ,
-   "autocomplete-search":[
-      {"id":"T",
-      "body" :[
+   "auto-completeSearch-T":[
             {
                "Version":1,
                "Key":"226396",
@@ -477,11 +475,8 @@
                   "LocalizedName":"Zhejiang"
                }
             }
-      ]
-   },
-   {
-      "id":"S",
-      "body" : [
+      ],
+      "auto-completeSearch-S":   [
          {
            "Version": 1,
            "Key": "60449",
@@ -632,9 +627,5 @@
              "LocalizedName": "Zhejiang"
            }
          }
-       ]
-
-      
-   }
    ]
 }

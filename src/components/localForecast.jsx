@@ -15,19 +15,19 @@ export default function LocalForecast({city}) {
                 <button onClick={onClick} className='absolute right-0 top-0 w-7 h-7 align-middle text-center hover:text-slate-700'>&#8451;</button>
                 : <button onClick={onClick} className='absolute right-0 top-0 w-7 h-7 align-middle text-center hover:text-slate-700'>&#8457;</button>
             }
-            <div className='flex border-b w-full border-solid'>
-                
+            <div className='flex items-center justify-start border-b w-full border-solid'>
                <img alt="weatherIcon" className='w-16 h-10' src='https://developer.accuweather.com/sites/default/files/01-s.png'/>
-                {isCelsius 
+                <div className=' text-slate-900 mr-3 text-3xl dark:text-slate-200 font-medium '>{city.cityName}</div>
+                {/* {isCelsius 
                     ?<div className='text-3xl font-sans font-medium'>{city.temperture.celsius}<span>&deg;</span></div>
                     :<div className='text-3xl font-sans font-medium'>{city.temperture.fahrenheit}&deg;</div>
-                }
+                } */}
             </div>
-            <div className='flex w-full p-1 shadow justify-between'>
-                <div >Current Weather</div>
+            <div className='flex items-center w-full p-1 shadow justify-between'>
+                <div className='' >Current Weather</div>
                 {isCelsius  
-                    ?<div className='font-medium'>{city.temperture.celsius}<span>&deg;</span></div>
-                    :<div className='font-medium'>{city.temperture.fahrenheit}&deg;</div>
+                    ?<div className='text-2xl font-medium'>{city.temperture.celsius}<span>&deg;</span></div>
+                    :<div className='text-2xl font-medium'>{city.temperture.fahrenheit}&deg;</div>
                 }
                 
             </div>
