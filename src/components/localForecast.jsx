@@ -6,8 +6,9 @@ export default function LocalForecast({city}) {
     const {isCelsius,toggleWeatherAppScale,favourites, SetFavourites} = useContext(WeatherAppContext)
 
     const favouriteClick = ()=>{
-        city.isFavourite = !city.isFavourite;
-        SetFavourites({...favourites, ...city ,city:city});
+        city.isFavourite = !city.isFavourite;   
+        SetFavourites((prevState)=>({cities:{...prevState.newCity, newCity:city},...prevState.newCity}))
+        console.log(favourites);
     }
     console.log(favourites);
     const numToTwoChar = (num)=>{
