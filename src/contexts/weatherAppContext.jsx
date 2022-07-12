@@ -18,6 +18,13 @@ export default function WeatherAppProvider({children}) {
   const { data :city ,status} = useQuery(['city', locationKey], getCityForecast,{
     staleTime: 24 * 60 * 60 * 1000 // 1 DAY CACHING
   })
+
+  useEffect(()=>{
+    const res = storageService.loadFromStorage('favourites')
+    if(res){
+      SetFavouriteList(res)
+    }
+  },[])
   
   useEffect(()=>{
     if(!isFirstRender){
@@ -38,11 +45,6 @@ export default function WeatherAppProvider({children}) {
   },[status, isFirstRender])
 
     
-    useEffect(()=>{
-      const res = storageService.loadFromStorage('favourites')
-      SetFavouriteList(res)
-      
-    },[])
   
   useEffect(()=>{
     if(isFirstRender){ SetisFirstRender(false)}
@@ -68,7 +70,6 @@ export default function WeatherAppProvider({children}) {
     if(!favouriteList.includes(city.key)){
       SetFavourite(true)
       SetFavouriteList(prevState => [...prevState,city.key])
-      return true;
     }
     else{
       const index = favouriteList.indexOf(city.key);
@@ -76,7 +77,6 @@ export default function WeatherAppProvider({children}) {
         favouriteList.splice(index,1)
         SetFavourite(false)
         SetFavouriteList(favouriteList)
-        return false;
       }
     }
   }
