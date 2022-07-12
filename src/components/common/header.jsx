@@ -19,8 +19,8 @@ export default function Header() {
               }
             </h1>
             <span className='mr-1 flex flex-row flex-wrap justify-center'>
-                <button type='button' className='m-0.5  p-1 rounded border-solid border border-zinc-600 bg-zinc-200 dark:bg-zinc-400  dark:border-none hover:bg-zinc-300 hover:dark:bg-zinc-300 font-medium' ><Link to='/'>Home</Link></button>
-                <button className='m-0.5 p-1 rounded border-solid border border-zinc-600 bg-zinc-200 dark:bg-zinc-400 dark:border-none hover:bg-zinc-300 hover:dark:bg-zinc-300 font-medium'><Link to='/favourites'>Favourites</Link></button>
+                <Link to='/' type='button' className='m-0.5  p-1 rounded border-solid border border-zinc-600 bg-zinc-200 dark:bg-zinc-400  dark:border-none hover:bg-zinc-300 hover:dark:bg-zinc-300 font-medium' >Home</Link>
+                <Link to='/favourites' className='m-0.5 p-1 rounded border-solid border border-zinc-600 bg-zinc-200 dark:bg-zinc-400 dark:border-none hover:bg-zinc-300 hover:dark:bg-zinc-300 font-medium' >Favourites</Link>
                 <button className='p-1 m-1 border-solid border rounded border-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 hover:dark:bg-zinc-800 ' onClick={toggleTheme}>
                   {isDarkMode() ? "Dark" : "Light"}
                 </button>

@@ -5,9 +5,7 @@ import { DEFAULT_LOCATION_KEY } from '../utils/settings';
 import { getCityForecast } from '../utils/getCityForecast';
 import { storageService } from '../utils/localStorage.service';
 
-
 export const WeatherAppContext = createContext();
-
 
 export default function WeatherAppProvider({children}) {
   
@@ -23,15 +21,12 @@ export default function WeatherAppProvider({children}) {
     useEffect(()=>{
       const res = storageService.loadFromStorage('favourites')
       SetFavouriteList(res)
-      console.log(res)
     },[])
   
   useEffect(()=>{
     if(isFirstRender){ SetisFirstRender(false)}
     else{
       storageService.saveToStorage('favourites',favouriteList);
-      console.log(favouriteList)
-      console.log(favourite)
       if(favouriteList && city){
         if(favouriteList.includes(city.key)){
           SetFavourite(true)
@@ -47,7 +42,6 @@ export default function WeatherAppProvider({children}) {
   const showForeCastOnHomePage = (locationKey) =>{
     SetLocationKey(locationKey);
   }
-
 
   const favouriteClick = ()=>{
     if(!favouriteList.includes(city.key)){

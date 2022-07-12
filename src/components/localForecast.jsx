@@ -34,6 +34,7 @@ export default function LocalForecast({city}) {
             </div>
             <div className='flex w-full p-1 shadow justify-between'>
                 <button onClick={favouriteClick}  className='flex items-center justify-center text-3xl dark:text-yellow-500 text-blue-800 hover:text-blue-700  hover:dark:text-yellow-400'>{favourite ?  <>&#9733;</> : <>&#9734;</>}</button>
+                <a className='flex mt-1 align-middle justify-center items-center' href={city.link} target="_blank" rel="noreferrer"><img className='h-6 w-6' src="https://img.icons8.com/ios-filled/344/information.png" alt="more info"/></a>
             </div>
         </div>
         )}   
