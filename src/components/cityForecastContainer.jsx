@@ -5,10 +5,11 @@ import FiveDayForecast from './fiveDayForecast';
 import LocalForecast from './localForecast';
 
 import { WeatherAppContext } from '../contexts/weatherAppContext';
+import { notify } from '../utils/customToast';
 
 export default function CityForecastContainer() {
-  const {city} = useContext(WeatherAppContext);
-
+  const {city, status} = useContext(WeatherAppContext);
+ 
   return (
     <>
        {city?

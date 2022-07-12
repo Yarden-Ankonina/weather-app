@@ -2,6 +2,7 @@ import * as React from "react";
 import { Routes, Route} from "react-router-dom";
 import { QueryClientProvider ,QueryClient } from "react-query";
 
+
 import './App.css';
 import Layout from "./components/layout";
 import Favourites from "./pages/favourites";

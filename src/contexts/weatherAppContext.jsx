@@ -4,6 +4,7 @@ import {useQuery} from 'react-query'
 import { DEFAULT_LOCATION_KEY } from '../utils/settings';
 import { getCityForecast } from '../utils/getCityForecast';
 import { storageService } from '../utils/localStorage.service';
+import { notify } from '../utils/customToast';
 
 export const WeatherAppContext = createContext();
 
@@ -17,10 +18,32 @@ export default function WeatherAppProvider({children}) {
   const { data :city ,status} = useQuery(['city', locationKey], getCityForecast,{
     staleTime: 24 * 60 * 60 * 1000 // 1 DAY CACHING
   })
+  
+  useEffect(()=>{
+    // console.log(status)
+    switch(status){
+      case "loading":
+        console.log(status)
+        notify("Loading...","info")
+        break;
+      case "error":
+        notify("Couldn't fetch weather","error")
+        console.log(status)
+        break;
+      case "success":
+        console.log(status)
+        notify("success...","success")
+        break;
+      default:
+        break;
+      }
+  },[status])
 
+    
     useEffect(()=>{
       const res = storageService.loadFromStorage('favourites')
       SetFavouriteList(res)
+      
     },[])
   
   useEffect(()=>{

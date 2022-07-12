@@ -7,9 +7,8 @@ const fetchApi = async (url)=>{
     }
     catch(error){
         console.log(error)
-        return null;
+        throw(error)
     }
-   
 }
 
 export default fetchApi;
