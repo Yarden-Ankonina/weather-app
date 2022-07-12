@@ -17,7 +17,7 @@ To use the app: <br/>
 4.Use Link :  [Weather App Website](https://yarden-weather-app.netlify.app)<br/>
 5.Deploy link : npm run deploy
 
-## notice 
+## Notice 
 The app can fetch data only up to 50 times a day.<br/>
 So choose your weather curfully :)<br/>
 
