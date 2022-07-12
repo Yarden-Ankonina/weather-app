@@ -29,7 +29,7 @@ export const getCityForecast = async ({queryKey}) => {
     const baseUrl =
     isDevMode
       ? "http://localhost:3001"
-      : "http://dataservice.accuweather.com";
+      : "https://dataservice.accuweather.com";
     const endPoints = {
         locationRequest : `${baseUrl}/locations/v1/${locationKey}?apikey=${process.env.REACT_APP_API_KEY}`,
         currentConditions : `${baseUrl}/currentconditions/v1/${locationKey}?apikey=${process.env.REACT_APP_API_KEY}`,
