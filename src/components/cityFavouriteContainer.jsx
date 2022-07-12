@@ -8,14 +8,6 @@ export default function CityFavouriteContainer() {
   
   return (
     <>
-    {status === 'error'?
-        <div>Something Went Wrong, Please Try Again Later</div>
-        :<></>
-      }
-      {status === 'loading'?
-        <div>...Loading</div>
-        :<></>
-      }
        {status === 'success' && (
         <div className='flex flex-wrap justify-center items-center m-2 bg-none rounded'>
             {favouriteList &&(
@@ -25,7 +17,6 @@ export default function CityFavouriteContainer() {
             )}
         </div>)
       }
-        
     </>
   )
 }

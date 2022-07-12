@@ -33,7 +33,7 @@ export default function CityFavourite(locationKey) {
             </Link>
             </div>
 
-            :<> Error</>
+            :<></>
         }
     </>
   )
