@@ -15,6 +15,7 @@ export default function WeatherAppProvider({children}) {
   const [locationKey, SetLocationKey] = useState(DEFAULT_LOCATION_KEY);
   const [favouriteList, SetFavouriteList] = useState([]);
   const [favourite,SetFavourite] = useState(false);
+  const [isFirstRender, SetisFirstRender] = useState(true)
   const { data :city ,status} = useQuery(['city', locationKey], getCityForecast,{
     staleTime: 24 * 60 * 60 * 1000 // 1 DAY CACHING
   })
@@ -23,18 +24,25 @@ export default function WeatherAppProvider({children}) {
       const res = storageService.loadFromStorage('favourites')
       SetFavouriteList(res)
       console.log(res)
-      // if(res.includes(city.key)){
-      //     SetFavourite(true)            
-      // }
-  },[])
+    },[])
   
-
   useEffect(()=>{
-    storageService.saveToStorage('favourites',favouriteList);
-    console.log(favouriteList)
-    console.log(favourite)
-
-},[favourite])
+    if(isFirstRender){ SetisFirstRender(false)}
+    else{
+      storageService.saveToStorage('favourites',favouriteList);
+      console.log(favouriteList)
+      console.log(favourite)
+      if(favouriteList && city){
+        if(favouriteList.includes(city.key)){
+          SetFavourite(true)
+        }
+        else{
+          SetFavourite(false)
+        }
+    }
+    }
+   
+  },[favourite,favouriteList,city,locationKey,isFirstRender])
 
   const favouriteClick = ()=>{
     if(!favouriteList.includes(city.key)){

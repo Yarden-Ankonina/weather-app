@@ -1,13 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { WeatherAppContext } from '../contexts/weatherAppContext'
-import { storageService } from '../utils/localStorage.service';
 
 export default function Favourite() {
-    const {favouriteClick,favouriteList,SetFavouriteList, city,favourite,SetFavourite} = useContext(WeatherAppContext)
+    const {favouriteClick, favourite} = useContext(WeatherAppContext)
 
     const onClick = ()=>{
         favouriteClick()
-        // SetFavourite(favourite? false : true);
     }
     
   return (

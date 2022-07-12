@@ -8,7 +8,7 @@ import { WeatherAppContext } from '../contexts/weatherAppContext';
 
 export default function CityForecastContainer() {
   const {city} = useContext(WeatherAppContext);
-  
+
   return (
     <>
        {city?
