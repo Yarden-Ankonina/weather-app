@@ -11,7 +11,8 @@ To use the app: <br/>
 2. Developement Mode :<br/>
 2.1. In Terminal 1:<br/>
 2.2. Start server :$ npm run mock-Web <br/>
-2.3. Start react app : $ npm run dev <br/>
+2.3. In Terminal 2:<br/>
+2.4. Start react app : $ npm run dev <br/>
 3.Production Mode : <br/>
 3.1. npm run demo 
 4.Use Link :  [Weather App Website](https://yarden-weather-app.netlify.app)<br/>
