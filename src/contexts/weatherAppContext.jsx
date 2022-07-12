@@ -11,8 +11,14 @@ export default function WeatherAppProvider({children}) {
   
   const [isCelsius, setIsCelsius] = useState(true);
   const [locationKey, SetLocationKey] = useState(DEFAULT_LOCATION_KEY);
-  const [favourites, SetFavourites] = useState({});
-  const {data :city ,status} = useQuery(['city', locationKey],getCityForecast);
+  const [favourites, SetFavourites] = useState([]);
+  const {data :city ,status} = useQuery(['city', locationKey], getCityForecast,{
+    staleTime: 24 * 60 * 60 * 1000 // 1 DAY CACHING
+  })
+
+  const toggleIsFavouriteCity = ()=>{
+    city.isFavourite = !city.isFavourite;   
+  }
 
   const toggleWeatherAppScale = ()=>{
     isCelsius ? setIsCelsius(false) : setIsCelsius(true)
@@ -26,7 +32,8 @@ export default function WeatherAppProvider({children}) {
     city,
     status,
     favourites,
-    SetFavourites
+    SetFavourites,
+    toggleIsFavouriteCity
   }
 
   return (

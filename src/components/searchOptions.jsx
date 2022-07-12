@@ -1,13 +1,14 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import { WeatherAppContext } from "../contexts/weatherAppContext";
 
 export default function SearchOptions({data, showSerchOptions, SetshowSerchOptions}) {
   const {SetLocationKey} = useContext(WeatherAppContext)
+
   const onClick= (e)=> {
-    SetshowSerchOptions(false);
-    SetLocationKey(e.target.dataset.key);
-    e.target.value = "";
-  }
+      SetshowSerchOptions(false);
+      SetLocationKey(e.target.id);
+      e.target.value = "";
+    }
 
   return (
     <>
@@ -20,9 +21,9 @@ export default function SearchOptions({data, showSerchOptions, SetshowSerchOptio
             </div>
           </button>
           {
-            data.map((city, id)=>(
-              <button data-city={city} key={id} data-key={city.Key} onClick={onClick} className="bg-slate-50 border solid border-slate-700/20 px-10 py-1 dark:bg-zinc-300 dark:border-slate-300/20 hover:dark:bg-slate-200 hover:bg-slate-200">
-                <span >{city.LocalizedName}</span>, {city.Country.LocalizedName}
+            data.map((city, idx)=>(
+              <button data-city={city} id={city.Key} key={idx} onClick={onClick} className="bg-slate-50 border solid border-slate-700/20 px-10 py-1 dark:bg-zinc-300 dark:border-slate-300/20 hover:dark:bg-slate-200 hover:bg-slate-200">
+                {city.LocalizedName}, {city.Country.LocalizedName}
               </button>
             ))
           }

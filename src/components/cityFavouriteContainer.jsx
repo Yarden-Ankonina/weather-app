@@ -4,7 +4,7 @@ import { WeatherAppContext } from '../contexts/weatherAppContext'
 import CityFavourite from './cityFavourite'
 
 export default function CityFavouriteContainer() {  
-  const {isCelsius, city, status}= useContext(WeatherAppContext)
+  const {status, favourites}= useContext(WeatherAppContext)
   return (
     <>
     {status === 'error'?
@@ -15,11 +15,13 @@ export default function CityFavouriteContainer() {
         <div>...Loading</div>
         :<></>
       }
-       {status === 'success'?
-        <div className='bg-slate-100 m-2  dark:bg-slate-900/30 bg-opacity-20 dark:border-none border border-solid rounded'>
-          <CityFavourite city={city} isCelsius={isCelsius} />
-        </div>
-      :<></>
+       {status === 'success' && favourites.length > 0 &&(
+        <div className='flex flex-wrap justify-center items-center m-2 bg-none  dark:border-none border border-solid rounded'>
+          {favourites.map((city)=>(
+          <CityFavourite city={city} />
+            ))
+            }
+        </div>)
       }
         
     </>

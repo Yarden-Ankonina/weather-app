@@ -9,6 +9,6 @@
 
 [[redirects]]
     from = "/"
-    to = "http://dataservice.accuweather.com/locations/v1/215854?apikey=N3XKvtPaWl6ZYCmmeoCXR6PutQk8xBzH"
+    to = "http://dataservice.accuweather.com/locations/v1/215854?apikey=4MpZnGdChpWN13iB8RsHPetXJj1oGwvy"
     status = 200
     force = true

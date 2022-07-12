@@ -1,7 +1,8 @@
+import fetchApi from "./fetchApi";
 import { isDevMode } from "./settings";
 
 const getCityForecastAdapter = (locationData,currentConditions,fiveDayForecastData)=>{
-    console.log(locationData,currentConditions,fiveDayForecastData)
+    // console.log(locationData,currentConditions,fiveDayForecastData)
     if(!locationData || !currentConditions || !fiveDayForecastData) return null;
     const city = {
         id : locationData.AdministrativeArea.ID,
@@ -25,27 +26,21 @@ const getCityForecastAdapter = (locationData,currentConditions,fiveDayForecastDa
 
 export const getCityForecast = async ({queryKey}) => {
     const [,locationKey] = queryKey
+    if(!locationKey) return;
     const baseUrl =
     isDevMode
       ? "http://localhost:3001"
       : "http://dataservice.accuweather.com";
-      console.log(process.env.REACT_APP_API_KEY)
     const endPoints = {
         locationRequest : `${baseUrl}/locations/v1/${locationKey}?apikey=${process.env.REACT_APP_API_KEY}`,
         currentConditions : `${baseUrl}/currentconditions/v1/${locationKey}?apikey=${process.env.REACT_APP_API_KEY}`,
         fiveDayForecast : `${baseUrl}/forecasts/v1/daily/5day/${locationKey}?apikey=${process.env.REACT_APP_API_KEY}`,
     }
-    try{
-        const locationRes = await fetch(endPoints.locationRequest);
-        const location = await locationRes.json();
-        const currentConditionsRes = await fetch(endPoints.currentConditions);
-        const currentConditions = await currentConditionsRes.json();
-        const fiveDayForecastRes = await fetch(endPoints.fiveDayForecast);
-        const fiveDayForecast = await fiveDayForecastRes.json();
-        return getCityForecastAdapter(location,currentConditions, fiveDayForecast)
-    }
-    catch(err){
-        console.log(err)
-        return null;
-    }
+        const location = await fetchApi(endPoints.locationRequest);
+        const currentConditions = await fetchApi(endPoints.currentConditions);
+        const fiveDayForecast = await fetchApi(endPoints.fiveDayForecast);
+      
+        return getCityForecastAdapter(location, currentConditions, fiveDayForecast)
 };
+
+  
