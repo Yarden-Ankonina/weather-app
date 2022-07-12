@@ -20,24 +20,22 @@ export default function WeatherAppProvider({children}) {
   })
   
   useEffect(()=>{
-    // console.log(status)
-    switch(status){
-      case "loading":
-        console.log(status)
-        notify("Loading...","info")
-        break;
-      case "error":
-        notify("Couldn't fetch weather","error")
-        console.log(status)
-        break;
-      case "success":
-        console.log(status)
-        notify("success...","success")
-        break;
-      default:
-        break;
-      }
-  },[status])
+    if(!isFirstRender){
+      switch(status){
+        case "loading":
+          notify("Loading...","info")
+          break;
+        case "error":
+          notify("Couldn't fetch weather","error")
+          break;
+        case "success":
+          notify("success","success")
+          break;
+        default:
+          break;
+        }
+    }
+  },[status, isFirstRender])
 
     
     useEffect(()=>{

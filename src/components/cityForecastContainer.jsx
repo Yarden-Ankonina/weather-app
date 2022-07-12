@@ -3,12 +3,10 @@ import React, {useContext} from 'react'
 
 import FiveDayForecast from './fiveDayForecast';
 import LocalForecast from './localForecast';
-
 import { WeatherAppContext } from '../contexts/weatherAppContext';
-import { notify } from '../utils/customToast';
 
 export default function CityForecastContainer() {
-  const {city, status} = useContext(WeatherAppContext);
+  const {city} = useContext(WeatherAppContext);
  
   return (
     <>
