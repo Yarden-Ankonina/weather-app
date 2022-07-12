@@ -1,15 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, } from 'react';
 
 import { WeatherAppContext } from '../contexts/weatherAppContext';
 import { numToTwoChar } from '../utils/convertScale';
+import Favourite from './favourite';
 
 export default function LocalForecast({city}) {
-    const {isCelsius,toggleWeatherAppScale, SetFavourites, toggleIsFavouriteCity} = useContext(WeatherAppContext)
-
-    const favouriteClick = ()=>{
-        toggleIsFavouriteCity();
-        SetFavourites(prevState =>[...prevState, city]);
-    }
+    const {isCelsius, toggleWeatherAppScale} = useContext(WeatherAppContext)
   return (
     <>
         {city &&(
@@ -37,10 +33,7 @@ export default function LocalForecast({city}) {
                 <div className='text-slate-800 dark:text-slate-300'>{city.weatherText}</div>
             </div>
             <div className='flex w-full p-1 shadow justify-between'>
-             <div>
-                <button onClick={favouriteClick}  className='flex items-center justify-center text-3xl dark:text-yellow-500 text-blue-800 hover:text-blue-700  hover:dark:text-yellow-400'>{city.isFavourite ?  <>&#9733;</> : <>&#9734;</>}</button>
-             </div>
-                <a className=' flex items-center text-slate-800 dark:text-slate-300' href={`${city.link}`} target="_blank"  rel="noreferrer">   <div className='mr-2'>More Information</div><img alt="more information" className='w-7 h-7 flex justify-center items-center hover:scale-105' src="https://img.icons8.com/windows/344/external-link-squared.png"/></a>
+                <Favourite/>
             </div>
         </div>
         )}   

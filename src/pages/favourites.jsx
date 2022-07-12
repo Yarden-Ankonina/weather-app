@@ -8,7 +8,6 @@ export default function Favourites() {
     <div className='flex items-center justify-center h-5/6'>
       <CityFavouriteContainer/> 
     </div>
-   
     </>
   )
 }

@@ -2,7 +2,6 @@ import fetchApi from "./fetchApi";
 import { isDevMode } from "./settings";
 
 const getCityForecastAdapter = (locationData,currentConditions,fiveDayForecastData)=>{
-    // console.log(locationData,currentConditions,fiveDayForecastData)
     if(!locationData || !currentConditions || !fiveDayForecastData) return null;
     const city = {
         id : locationData.AdministrativeArea.ID,
