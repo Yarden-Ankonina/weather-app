@@ -1,0 +1,19 @@
+{
+    "/locations/v1/215835?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F":"/search-by-location-key-ramat-aviv",
+    "/locations/v1/215854?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F":"/search-by-location-key-tel-aviv",
+    "/locations/v1/59708?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F": "/search-by-location-key-fuzhou",
+
+    "/currentconditions/v1/215835?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F":"/currentconditions-ramat-aviv",
+    "/currentconditions/v1/215854?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F":"/currentconditions-tel-aviv",
+    "/currentconditions/v1/59708?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F":"/currentconditions-fuzhou",
+
+    "/forecasts/v1/daily/5day/215835?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F":"/5-daily-forecasts-ramat-aviv",
+    "/forecasts/v1/daily/5day/215854?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F":"/5-daily-forecasts-tel-aviv",
+    "/forecasts/v1/daily/5day/59708?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F":"/5-daily-forecasts-fuzhou",
+
+    "/locations/v1/cities/autocomplete?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F&q=T": "/auto-completeSearch-T",
+    "/locations/v1/cities/autocomplete?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F&q=tel": "/auto-completeSearch-tel",
+    "/locations/v1/cities/autocomplete?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F&q=rama": "/auto-completeSearch-ramat",
+    "/locations/v1/cities/autocomplete?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F&q=fuz": "/auto-completeSearch-fuz",
+    "/locations/v1/cities/autocomplete?apikey=xxFxT4VRXZA8c9RHq1nvCFdmMhuUJ46F&q=S": "/auto-completeSearch-S"
+}
