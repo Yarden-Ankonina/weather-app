@@ -3,7 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const notify = (text, kind) => {
   let closeSpeed;
-  kind === "info" ? (closeSpeed = 3000) :kind === "success" ?(closeSpeed = 1000):(closeSpeed = 5000);
+  kind === "info" ? (closeSpeed = 5000) :kind === "success" ?(closeSpeed = 1000):(closeSpeed = 3000);
   const props = {
     position: "top-right",
     autoClose: closeSpeed,
