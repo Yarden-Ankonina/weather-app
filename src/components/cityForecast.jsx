@@ -1,14 +1,7 @@
 import React from 'react'
-import {useQuery, useQueryClient} from 'react-query';
-import { useCityQuery } from '../hooks/useCityQuery';
-import { useCurrentConditionQuery } from '../hooks/useCurrentConditionQuery';
-import { useTemperature } from '../hooks/useTemperature';
-import { mockFetchCityByLocationKey, mockFetchCurrentWeather } from '../utils/mockServerJsonService';
-import { fetchCityByLocationKey, TEL_AVIV_LOCATION_KEY } from '../utils/weatherService';
 
 import FiveDayForecast from './fiveDayForecast'
 import LocalForecast from './localForecast'
-
 
 export default function CityForecast({city, isCelsius, toggleTemperatureScale}) {
   

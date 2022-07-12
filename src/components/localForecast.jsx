@@ -2,10 +2,10 @@ import React, { useContext, } from 'react';
 
 import { WeatherAppContext } from '../contexts/weatherAppContext';
 import { numToTwoChar } from '../utils/convertScale';
-import Favourite from './favourite';
 
 export default function LocalForecast({city}) {
-    const {isCelsius, toggleWeatherAppScale} = useContext(WeatherAppContext)
+    const {isCelsius, toggleWeatherAppScale, favouriteClick, favourite} = useContext(WeatherAppContext)
+    
   return (
     <>
         {city &&(
@@ -33,7 +33,7 @@ export default function LocalForecast({city}) {
                 <div className='text-slate-800 dark:text-slate-300'>{city.weatherText}</div>
             </div>
             <div className='flex w-full p-1 shadow justify-between'>
-                <Favourite/>
+                <button onClick={favouriteClick}  className='flex items-center justify-center text-3xl dark:text-yellow-500 text-blue-800 hover:text-blue-700  hover:dark:text-yellow-400'>{favourite ?  <>&#9733;</> : <>&#9734;</>}</button>
             </div>
         </div>
         )}   

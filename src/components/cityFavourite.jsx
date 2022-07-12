@@ -1,20 +1,23 @@
 import React, { useContext } from 'react'
-import { WeatherAppContext } from '../contexts/weatherAppContext'
-import { numToTwoChar } from '../utils/convertScale'
 import {useQuery} from 'react-query'
+import { Link } from 'react-router-dom'
+
+import { WeatherAppContext } from '../contexts/weatherAppContext'
 import { getCityForecast } from '../utils/getCityForecast'
+import { numToTwoChar } from '../utils/convertScale'
 
 export default function CityFavourite(locationKey) {
-    const {isCelsius, toggleWeatherAppScale} = useContext(WeatherAppContext)
-    console.log(locationKey)
-    const { data:city ,status} = useQuery(['favoriteCity', locationKey.locationKey], getCityForecast)
-    console.log(city)
-    console.log(status)
+    const {isCelsius, toggleWeatherAppScale, showForeCastOnHomePage} = useContext(WeatherAppContext)
+    const { data:city} = useQuery(['favoriteCity', locationKey.locationKey], getCityForecast)
+    const onClick = ()=>{
+        showForeCastOnHomePage(locationKey.locationKey);
+    }
 
     return (
     <>
         {city ?
-            <div className='flex flex-col items-center m-2 p-2 dark:text-slate-200 bg-sky-500 dark:bg-sky-800 shadow-md dark:shadow-sm dark:shadow-slate-500 rounded relative' >
+        <Link to='/' onClick={onClick}>
+            <div  className='flex flex-col items-center m-2 p-2 dark:text-slate-200 bg-sky-500 dark:bg-sky-800 shadow-md dark:shadow-sm dark:shadow-slate-500 rounded relative' >
                 <button onClick={toggleWeatherAppScale} className='absolute right-0 top-0 w-7 h-7 align-middle text-center hover:text-slate-700'>{isCelsius ?<>&#8451;</>:<>&#8457;</>}</button>
                 <div className='felx justify-between '>
                     <div className='text-lg text-slate-900 dark:text-slate-200'>{city.cityName}</div>
@@ -25,6 +28,8 @@ export default function CityFavourite(locationKey) {
                     <img alt=" " className='w-16 h-10' src={"https://developer.accuweather.com/sites/default/files/" + numToTwoChar(city.weatherIcon) + "-s.png"}/>
                 </div>
             </div>
+        </Link>
+           
             :<> Error</>
         }
     </>

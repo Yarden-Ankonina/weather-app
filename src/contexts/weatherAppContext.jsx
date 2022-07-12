@@ -44,6 +44,11 @@ export default function WeatherAppProvider({children}) {
    
   },[favourite,favouriteList,city,locationKey,isFirstRender])
 
+  const showForeCastOnHomePage = (locationKey) =>{
+    SetLocationKey(locationKey);
+  }
+
+
   const favouriteClick = ()=>{
     if(!favouriteList.includes(city.key)){
       SetFavourite(true)
@@ -77,7 +82,8 @@ export default function WeatherAppProvider({children}) {
     favouriteList,
     SetFavouriteList,
     favourite,
-    SetFavourite
+    SetFavourite,
+    showForeCastOnHomePage
   }
 
   return (

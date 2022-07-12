@@ -19,8 +19,8 @@ export default function CityFavouriteContainer() {
        {status === 'success' && (
         <div className='flex flex-wrap justify-center items-center m-2 bg-none  dark:border-none border border-solid rounded'>
             {favouriteList &&(
-              favouriteList.map((locationKey,id)=>(
-                <CityFavourite locationKey={locationKey}/>
+              favouriteList.map((locationKey,idx)=>(
+                <CityFavourite key={idx} locationKey={locationKey}/>
               ))
             )}
         </div>)
