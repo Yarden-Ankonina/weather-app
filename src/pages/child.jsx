@@ -15,7 +15,7 @@ export default function Child() {
     
   return (
     <>
-        <div className='h-full flex justify-center items-center' >
+        <div className='h-5/6 flex justify-center items-center' >
             <CityForecastContainer />
         </div>
     </>
