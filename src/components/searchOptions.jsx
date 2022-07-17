@@ -1,14 +1,17 @@
 import { useContext} from "react";
+import { useNavigate } from "react-router-dom";
 import { WeatherAppContext } from "../contexts/weatherAppContext";
 import { getKeyFromGeoLocation } from "../utils/getKeyFromGeoLocation";
 
 export default function SearchOptions({data, showSerchOptions, SetshowSerchOptions}) {
   const {SetLocationKey} = useContext(WeatherAppContext)
+  const navigate = useNavigate();
 
-  const onClick= (e)=> {
+  const onClick= (e,key)=> {
       SetshowSerchOptions(false);
-      SetLocationKey(e.target.id);
+      SetLocationKey(key);
       e.target.value = "";
+      navigate(`/${key}`)
     }
   const onClickGeo =async (e)=>{
     const city = await getKeyFromGeoLocation();
@@ -29,7 +32,7 @@ export default function SearchOptions({data, showSerchOptions, SetshowSerchOptio
           </button>
           {
             data.map((city, idx)=>(
-              <button data-city={city} id={city.Key} key={idx} onClick={onClick} className="bg-slate-50 border solid border-slate-700/20 px-10 py-1 dark:bg-zinc-300 dark:border-slate-300/20 hover:dark:bg-slate-200 hover:bg-slate-200">
+              <button data-city={city} id={city.Key} key={idx} onClick={(e)=>onClick(e,city.Key)} className="bg-slate-50 border solid border-slate-700/20 px-10 py-1 dark:bg-zinc-300 dark:border-slate-300/20 hover:dark:bg-slate-200 hover:bg-slate-200">
                 {city.LocalizedName}, {city.Country.LocalizedName}
               </button>
             ))

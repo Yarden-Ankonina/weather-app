@@ -10,6 +10,7 @@ import NotFound from "./pages/notFound";
 import { ThemeProvider } from "./contexts/themeContext";
 import WeatherAppProvider from "./contexts/weatherAppContext";
 import LoadProblem from "./pages/loadProbelm";
+import Child from "./pages/child";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ function App() {
                 <Route index path="/" element={<Home />} />
                 <Route path="/favourites" element={<Favourites />} />
                 <Route path="/loadProblem" element={<LoadProblem />} />
+                <Route path ="/:id" element={<Child/>}/>
                 <Route path="/*" element={<NotFound />} />
               </Route>
             </Routes>
