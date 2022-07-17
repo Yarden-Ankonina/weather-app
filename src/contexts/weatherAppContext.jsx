@@ -60,7 +60,7 @@ export default function WeatherAppProvider({children}) {
     }
     }
    
-  },[favourite,favouriteList,city,locationKey,isFirstRender])
+  },[favourite,favouriteList,city,isFirstRender])
 
   const showForeCastOnHomePage = (locationKey) =>{
     SetLocationKey(locationKey);
